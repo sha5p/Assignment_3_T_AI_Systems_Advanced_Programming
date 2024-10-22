@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4xc8kjavtg2"]
+
+[ext_resource type="Script" path="res://Scripts/Background.gd" id="1_vhj8t"]
+[ext_resource type="PackedScene" uid="uid://bevqb2e8t5eci" path="res://Scences/parallax_background.tscn" id="2_ug5rj"]
+[ext_resource type="PackedScene" uid="uid://bnxpqln51xhed" path="res://Scences/parallax_background_2.tscn" id="3_b042y"]
+[ext_resource type="Shader" path="res://shockwave.gdshader" id="4_3asgl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2wow"]
+shader = ExtResource("4_3asgl")
+shader_parameter/strength = 0.08
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.0
+shader_parameter/aberration = 0.425
+shader_parameter/width = 0.04
+shader_parameter/feather = 0.135
+
+[sub_resource type="Animation" id="Animation_v7dkg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3ti3g"]
+resource_name = "disort"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypp8p"]
+_data = {
+"RESET": SubResource("Animation_v7dkg"),
+"disort": SubResource("Animation_3ti3g")
+}
+
+[node name="Node" type="Node"]
+script = ExtResource("1_vhj8t")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ug5rj")]
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("3_b042y")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_q2wow")
+offset_left = 168.0
+offset_top = -192.0
+offset_right = 1941.0
+offset_bottom = 834.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ypp8p")
+}

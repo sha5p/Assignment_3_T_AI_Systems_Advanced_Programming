@@ -1,0 +1,83 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1729586984
+Global_Varibles.gd::GDScript::-1::1729318166::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::7291430915803423784::1729148241::1729148427::1::::<><>::
+README.md::TextFile::-1::1729586635::0::1::::<><>::
+SaveData.gd::GDScript::-1::1729148241::0::1::::<>Node<>::
+SaveSettings.gd::GDScript::-1::1729317256::0::1::::<>Node<>::
+shockwave.gdshader::Shader::-1::1729485146::0::1::::<><>::
+shockwave.tscn::PackedScene::1222914034587466915::1729325964::0::1::::<><>::uid://ccs3ysqh2uber::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-bg.png
+::res://Assests/::1729319895
+::res://Assests/Backgrounds_Parrlax/::1729319948
+::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/::1729319952
+parallax-demon-woods-bg.png::CompressedTexture2D::4952121759578611021::1729319919::1729319952::1::::<><>::
+parallax-demon-woods-close-trees.png::CompressedTexture2D::3360991076689651891::1729319919::1729319952::1::::<><>::
+parallax-demon-woods-far-trees.png::CompressedTexture2D::4996575412407057187::1729319919::1729319952::1::::<><>::
+parallax-demon-woods-mid-trees.png::CompressedTexture2D::2389404300220280437::1729319919::1729319952::1::::<><>::
+::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/::1729319952
+01_Mist.png::CompressedTexture2D::4346739340629390469::1729319849::1729319952::1::::<><>::
+02_Bushes.png::CompressedTexture2D::115171257950370396::1729319849::1729319952::1::::<><>::
+03_Particles.png::CompressedTexture2D::4774983888818994110::1729319849::1729319952::1::::<><>::
+04_Forest.png::CompressedTexture2D::4072278859313873336::1729319849::1729319952::1::::<><>::
+05_Particles.png::CompressedTexture2D::4587579318343549675::1729319849::1729319952::1::::<><>::
+06_Forest.png::CompressedTexture2D::4965447812678424351::1729319849::1729319952::1::::<><>::
+07_Forest.png::CompressedTexture2D::5306946367778336668::1729319849::1729319952::1::::<><>::
+08_Forest.png::CompressedTexture2D::3788646573926158237::1729319849::1729319952::1::::<><>::
+09_Forest.png::CompressedTexture2D::7926898831306869836::1729319849::1729319952::1::::<><>::
+10_Sky.png::CompressedTexture2D::3906747820428221440::1729319849::1729319952::1::::<><>::
+::res://Assests/DarkMan/::1729306025
+Assets.png::CompressedTexture2D::1655941502855526408::1729305942::1729306025::1::::<><>::
+::res://Assests/Dungeon Ruins Tileset/::1729310482
+Dungeon Ruins Tileset Day.png::CompressedTexture2D::6368088736152739726::1729310451::1729310478::1::::<><>::
+Dungeon Ruins Tileset Night.png::CompressedTexture2D::1580676136966842994::1729310451::1729310478::1::::<><>::
+::res://Assests/StickmanPack/::1729233300
+::res://Assests/StickmanPack/Idle/::1729233528
+thickIdleSheet.png::CompressedTexture2D::2676533960838901486::1729233300::1729233349::1::::<><>::
+thinIdleSheet.png::CompressedTexture2D::1890851334105470376::1729233300::1729233349::1::::<><>::
+::res://Assests/StickmanPack/Punch/::1729233349
+thickPunchSheet.png::CompressedTexture2D::8485677059743313898::1729233300::1729233349::1::::<><>::
+thinPunchSheet.png::CompressedTexture2D::967587932042175410::1729233300::1729233349::1::::<><>::
+::res://Assests/StickmanPack/Run/::1729233349
+thickRunSheet.png::CompressedTexture2D::6624583026523305384::1729233300::1729233349::1::::<><>::
+thinRunSheet.png::CompressedTexture2D::7527664886240972759::1729233300::1729233349::1::::<><>::
+::res://Audio_Managment/::1729148241
+default_bus_layout.tres::AudioBusLayout::7041686083903452881::1729148241::0::1::::<><>::
+::res://Scences/::1729484447
+Background.tscn::PackedScene::131457610055569659::1729484447::0::1::::<><>::res://Scripts/Background.gd<>uid://bevqb2e8t5eci::::res://Scences/parallax_background.tscn<>uid://bnxpqln51xhed::::res://Scences/parallax_background_2.tscn<>res://shockwave.gdshader
+Level1.tscn::PackedScene::5982297893620660438::1729466343::0::1::::<><>::uid://db5a2i8taggb5::::res://icon.svg<>uid://ba50nhqng6bp1::::res://Scences/Player.tscn<>uid://b4xc8kjavtg2::::res://Scences/Background.tscn
+parallax_background.tscn::PackedScene::2711502674594268956::1729466343::0::1::::<><>::uid://bvwptic750qp1::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/10_Sky.png<>uid://dk634owho84l1::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/09_Forest.png<>uid://bt8ipquylxq8t::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/08_Forest.png<>uid://chuyvp2rkoxro::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/07_Forest.png<>uid://cc0kg2hlwhrml::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/06_Forest.png<>uid://b6mi044bijjxr::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/05_Particles.png<>uid://cabbj013o64wg::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/03_Particles.png<>uid://byav3qsxedcds::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/04_Forest.png<>uid://bv14a8oun33m::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/02_Bushes.png<>uid://b26ufrejrw66l::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/01_Mist.png
+parallax_background_2.tscn::PackedScene::3347296266162900863::1729466343::0::1::::<><>::uid://ccs3ysqh2uber::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-bg.png<>uid://cdgm4qj5esb3x::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-far-trees.png<>uid://babpe0r47exp2::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-mid-trees.png<>uid://bn5dbc8ghxnkd::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-close-trees.png
+Player.tscn::PackedScene::2449893549435039892::1729466343::0::1::::<><>::res://Scripts/Player.gd<>uid://beesegry41mgs::::res://Assests/StickmanPack/Idle/thickIdleSheet.png<>uid://ds5r4j1rhn0eg::::res://Assests/StickmanPack/Punch/thickPunchSheet.png<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>uid://c1m86di1narcq::::res://Assests/StickmanPack/Run/thickRunSheet.png<>res://State_Machine/Player_States/State_Player_Idle.gd<>res://State_Machine/Player_States/State_Player_Jump.gd<>uid://xufd5q4oil2g::::res://Assests/DarkMan/Assets.png<>res://State_Machine/Player_States/State_Player_Move.gd<>res://State_Machine/Player_States/State_Player_Fall.gd<>res://Scripts/State_Player_wait.gd<>res://Scripts/State_Player_Attack.gd<>res://shockwave.gdshader
+::res://Scences/Menu_Scences/::1729466343
+main_menu.tscn::PackedScene::5270251163629403830::1729466343::0::1::::<><>::res://Scripts/Menu_Scripts/Main_Menu_Script.gd<>uid://ps2w6o2mwdtk::::res://Scences/Menu_Scences/Player_Settings/Options.tscn
+::res://Scences/Menu_Scences/Player_Settings/::1729466343
+audio_slider_setting.tscn::PackedScene::1379132954979579458::1729148241::0::1::::<><>::res://Scripts/Audio_Slider_Setting.gd
+FPSOptions.tscn::PackedScene::5244555842433044575::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/FPS_Options.gd
+hotkey.tscn::PackedScene::7050879345345438240::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/hotkey.gd
+Options.tscn::PackedScene::1091671751508941548::1729155127::0::1::::<><>::res://Scripts/Menu_Scripts/Options.gd<>uid://8xvalyodq53v::::res://Scences/Menu_Scences/Player_Settings/settings.tscn
+QualityOptions.tscn::PackedScene::8209156252994123474::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/QualityOptions.gd
+settings.tscn::PackedScene::2364988200719466293::1729466343::0::1::::<><>::uid://c7pq7nj2gnfiu::::res://Scences/Menu_Scences/Player_Settings/hotkey.tscn<>uid://twceaywxwjne::::res://Scences/Menu_Scences/Player_Settings/audio_slider_setting.tscn<>uid://dmsep4a3vnejk::::res://Scences/Menu_Scences/Player_Settings/Window Options.tscn<>uid://cgyrclf04v5xb::::res://Scences/Menu_Scences/Player_Settings/FPSOptions.tscn<>uid://do7tusmdnebws::::res://Scences/Menu_Scences/Player_Settings/QualityOptions.tscn
+Window Options.tscn::PackedScene::8038958153666332036::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/Window Options.gd
+::res://Scripts/::1729325894
+Audio_Slider_Setting.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
+Background.gd::GDScript::-1::1729325894::0::1::::<>Node<>::
+Player.gd::GDScript::-1::1729325894::0::1::::Player<>CharacterBody2D<>::
+State_Player_Attack.gd::GDScript::-1::1729319214::0::1::::<>State<>::
+State_Player_wait.gd::GDScript::-1::1729319047::0::1::::<>State<>::
+::res://Scripts/Menu_Scripts/::1729317119
+FPS_Options.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
+hotkey.gd::GDScript::-1::1729317119::0::1::::Rebind_Button<>Control<>::
+Main_Menu_Script.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
+Options.gd::GDScript::-1::1729148241::0::1::::setting<>Control<>::
+QualityOptions.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
+Window Options.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
+::res://State_Machine/::1729484447
+State_Class.gd::GDScript::-1::1729312765::0::1::::State<>Node<>::
+State_Machine.gd::GDScript::-1::1729484447::0::1::::<>Node<>::
+::res://State_Machine/Player_States/::1729314084
+State_Player_Fall.gd::GDScript::-1::1729247490::0::1::::<>State<>::
+State_Player_Idle.gd::GDScript::-1::1729314029::0::1::::<>State<>::
+State_Player_Jump.gd::GDScript::-1::1729314084::0::1::::<>State<>::
+State_Player_Move.gd::GDScript::-1::1729314029::0::1::::<>State<>::
+::res://State_Machine/State_Scences/::1729295736
+State_Machine.tscn::PackedScene::496201511128867273::1729295736::0::1::::<><>::res://State_Machine/State_Machine.gd

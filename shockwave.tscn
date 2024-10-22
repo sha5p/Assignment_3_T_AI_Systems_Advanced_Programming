@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ronhldhit11p"]
+
+[ext_resource type="Texture2D" uid="uid://ccs3ysqh2uber" path="res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-bg.png" id="2_403yw"]
+
+[sub_resource type="Shader" id="Shader_rtt1w"]
+code = "shader_type canvas_item;
+uniform vec2 center;
+uniform float force;
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	vec2 disp = normalize(UV-center)*force;
+	COLOR = vec4(UV - disp,0.0,1.0);
+	COLOR =texture(TEXTURE,UV-disp);
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+	"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_moj3o"]
+shader = SubResource("Shader_rtt1w")
+shader_parameter/center = Vector2(0.5, 0)
+shader_parameter/force = null
+
+[node name="TextureRect" type="TextureRect"]
+material = SubResource("ShaderMaterial_moj3o")
+offset_left = -519.0
+offset_top = -292.0
+offset_right = 515.0
+offset_bottom = 290.0
+texture = ExtResource("2_403yw")
+expand_mode = 2

@@ -1,0 +1,14 @@
+AnimationPlayer
+AnimatedSprite2D
+ColorRect
+CanvasLayer
+TextureRect
+Sprite2D
+ParallaxLayer
+Node
+ParallaxBackground
+Camera2D
+Timer
+CollisionShape2D
+Area2D
+StaticBody2D
