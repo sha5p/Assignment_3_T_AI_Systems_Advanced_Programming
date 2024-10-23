@@ -51,7 +51,7 @@ _data = {
 "disort": SubResource("Animation_3ti3g")
 }
 
-[node name="Node" type="Node"]
+[node name="Background" type="Node"]
 script = ExtResource("1_vhj8t")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_ug5rj")]

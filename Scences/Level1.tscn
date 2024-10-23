@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crh4tpta0dfvq"]
+[gd_scene load_steps=6 format=3 uid="uid://crh4tpta0dfvq"]
 
 [ext_resource type="Texture2D" uid="uid://db5a2i8taggb5" path="res://icon.svg" id="1_7pat6"]
 [ext_resource type="PackedScene" uid="uid://ba50nhqng6bp1" path="res://Scences/Player.tscn" id="2_u4r5g"]
 [ext_resource type="PackedScene" uid="uid://b4xc8kjavtg2" path="res://Scences/Background.tscn" id="3_26xcp"]
+[ext_resource type="PackedScene" uid="uid://dqj5uwdminnwh" path="res://Demon_Canine.tscn" id="4_crcdp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpqby"]
 size = Vector2(1014, 183)
@@ -33,6 +34,9 @@ scale = Vector2(7.92188, 1.55469)
 texture = ExtResource("1_7pat6")
 
 [node name="Player" parent="." instance=ExtResource("2_u4r5g")]
-position = Vector2(533, 362)
+position = Vector2(533, 402)
 
 [node name="Node" parent="." instance=ExtResource("3_26xcp")]
+
+[node name="Mob_Demon_Canine" parent="." instance=ExtResource("4_crcdp")]
+position = Vector2(808, 494)

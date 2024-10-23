@@ -18,11 +18,12 @@ func process_physics(delta: float) -> void:
 	if new_state:
 		change_state(new_state)
 func process_input(event: InputEvent) ->void:
-	var z:String
-	if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
-		z="Move"
-	if Input.is_action_just_pressed("Up"):
-		z="Jump"
+	
+	#var z:String
+	#if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
+		#z="Move"
+	#if Input.is_action_just_pressed("Up"):
+		#z="Jump"
 	var new_state= current_state.process_input(event)
 	if new_state:
 		change_state(new_state)
