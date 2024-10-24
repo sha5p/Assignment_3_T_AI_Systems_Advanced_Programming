@@ -13,7 +13,7 @@ func enter() ->void:
 	animations_2.play("Move")
 	var direction = Input.get_axis("Left", "Right")	
 	parent.velocity.x = direction * SPEED
-func process_input(event: InputEvent) -> State:
+func process_input(_event: InputEvent) -> State:
 	var direction = Input.get_axis("Left", "Right")	
 
 	if direction:

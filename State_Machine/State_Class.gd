@@ -7,6 +7,7 @@ extends Node
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var parent: CharacterBody2D
+var player: Node2D
 var animations:AnimatedSprite2D
 func enter() ->void:
 		parent.animations.play(animation_name)

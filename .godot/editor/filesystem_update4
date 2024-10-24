@@ -1,9 +1,10 @@
-res://Demon_Canine.tscn
+res://Reaper.tscn
 res://State_Machine/State_Machine.gd
+res://Reaper_State_Search_D2.gd
 res://shockwave.gdshader
-res://State_Machine/AI_Mob/Canine_States/State_Canine_D2.gd
 res://Scences/Level1.tscn
-res://Scences/Player.tscn
 res://Scences/Background.tscn
 res://State_Machine/State_Scences/State_Machine.tscn
-res://State_Machine/AI_Mob/Canine_States/State_Canine_Search.gd
+res://Scences/Player.tscn
+res://Navigation.tscn
+res://State_Reaper_Summon.gd

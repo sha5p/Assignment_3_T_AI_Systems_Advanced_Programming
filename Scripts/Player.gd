@@ -7,13 +7,12 @@ class_name Player
 @onready var state_machine = $Movment_StateMachine
 #@onready var demension_state_machine = $Demension_StateMachine
 @onready var attack_state_machine_2 = $Attack_StateMachine2
-
+var player
 func _ready():
-	print("Animations: ", animations)
-	print("Animations2: ", animations2)
-	state_machine.init(self, animations)
+	print(global_position,"Player check")
+	state_machine.init(self, animations,player)
 	#demension_state_machine.init(self,animations)
-	attack_state_machine_2.init(self,animations)
+	attack_state_machine_2.init(self,animations,player)
 func _unhandled_input(event: InputEvent) ->void:
 	if Input.is_action_just_pressed("Change Dimension"):
 		animation_player_3.play("disort")
@@ -43,3 +42,5 @@ func _process(delta: float) -> void:
 	#demension_state_machine.process_physics(delta)
 	attack_state_machine_2.process_physics(delta)
 
+func Player():
+	pass

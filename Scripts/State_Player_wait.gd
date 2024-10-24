@@ -9,11 +9,11 @@ func enter() ->void:
 	animation_player.stop()
 	animation_player_2.stop()
 	super()
-func process_input(event: InputEvent) -> State:
+func process_input(_event: InputEvent) -> State:
 	if Input.is_action_just_pressed("Attack") and parent.is_on_floor():
 		return attack_state
 	return null
-func process_physics(delta: float) -> void:
+func process_physics(_delta: float) -> void:
 	pass
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

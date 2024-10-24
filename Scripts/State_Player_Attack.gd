@@ -27,9 +27,9 @@ func enter() ->void:
 			attack="attack"
 		animation_player_2.play(attack)
 		timer_2.start()
-func _unhandled_input(event: InputEvent) ->void:
+func _unhandled_input(_event: InputEvent) ->void:
 	pass
-func process_physics(delta: float) -> State:
+func process_physics(_delta: float) -> State:
 	if !attacked:
 		return none_state
 	return null
@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 	pass
 func _on_timer_timeout():
 	attacked = false
-func _on_attack_body_entered(body):
+func _on_attack_body_entered(_body):
 	print("hit")
 
 
