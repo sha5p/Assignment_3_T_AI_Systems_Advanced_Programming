@@ -11,3 +11,7 @@
 |Skele|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|This mob is only able to control its status effects decision making is levft up to the player |Above|
 |Big Guy||Big mob guy that necro cannot control|Above|
 |Player||Has a varity of states and applications that cannot be applied in other dimensions|
+
+For this assigment to excute a powerful State Machine multiple diffrent types where used throughout the game including in he AI, Player and the terrain. For the player was designed around a simple node based state machine along with the terrian that could help provide information to produce an intellgent AI. 
+
+This system would work by childing nodes to the main script and refrencing them in the main code f
