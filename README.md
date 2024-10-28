@@ -15,3 +15,10 @@
 For this assigment to excute a powerful State Machine multiple diffrent types where used throughout the game including in he AI, Player and the terrain. For the player was designed around a simple node based state machine along with the terrian that could help provide information to produce an intellgent AI. 
 
 This system would work by childing nodes to the main script and refrencing them in the main code f
+
+### State machine 
+#### Player State Machine and Script
+### State Machine Enemy AI
+#### Main Necromancer AI State Machine 
+#### Signals via state machine 
+#### Companion 
