@@ -17,8 +17,14 @@ For this assigment to excute a powerful State Machine multiple diffrent types wh
 This system would work by childing nodes to the main script and refrencing them in the main code f
 
 ### State machine 
+State MAchine explanation what basic state machine is
 #### Player State Machine and Script
+What player does for state Machine 
+Script based state machine 
+
 ### State Machine Enemy AI
+Basic setup explanation for the state machine here and why it is used
 #### Main Necromancer AI State Machine 
+How hirecy based state machine is used from the player and they talked to allow for information 
 #### Signals via state machine 
-#### Companion 
+#### Companion follows
