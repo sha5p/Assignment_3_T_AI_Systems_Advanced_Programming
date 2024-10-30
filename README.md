@@ -17,7 +17,75 @@ For this assigment to excute a powerful State Machine multiple diffrent types wh
 This system would work by childing nodes to the main script and refrencing them in the main code f
 
 ### State machine 
-State MAchine explanation what basic state machine is
+A state machine allows for one singular action to be performed and all other actions ignored and bypassed by the parent node. This allows for  easier debugging throughout the game by improving readablity which for the devloper makes creating specfically more complex AI, Players and transisation between animation and other information. This assigment uses state machines to influence the enviorment and enemies via the information the player provides. These enemies will than not only be influenced by the player but by other enemies adding more complextiy and varity for the user. 
+
+#### State Class
+```
+class_name State
+extends Node
+
+@export var animation_name:String
+@export var move_speed: float= 400
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+var parent: CharacterBody2D
+var player: Node2D
+var animations:AnimatedSprite2D
+func enter() ->void:
+		parent.animations.play(animation_name)
+func exit() -> void:
+	pass
+func process_input(_event: InputEvent) ->State:
+	return null
+func process_frame(_delta: float) -> State:
+	return null
+```
+#### State Machine
+![image](https://github.com/user-attachments/assets/e5b5c700-ef26-455b-a073-a32e485210ff)
+
+```
+extends Node
+@export var starting_state:State
+@export var current_state: State
+# Called when the node enters the scene tree for the first time.
+
+func init(parent:CharacterBody2D, animations:AnimatedSprite2D,player: Node2D) -> void:
+	for child in get_children():
+		child.parent=parent
+		child.animations=animations
+		child.player=player
+		if child.has_method("tree"):
+			for sub_child in child.get_children():
+				sub_child.parent=parent
+				sub_child.animations=animations
+				sub_child.player=player
+	change_state(starting_state) 	
+func change_state(new_state: Node) -> void:
+	if current_state:
+		current_state.exit()
+	current_state=new_state
+	current_state.enter()
+func process_physics(delta: float) -> void:
+	var new_state =current_state.process_physics(delta)
+	if new_state:
+		change_state(new_state)
+func process_input(event: InputEvent) ->void:
+	
+	#var z:String
+	#if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
+		#z="Move"
+	#if Input.is_action_just_pressed("Up"):
+		#z="Jump"
+	var new_state= current_state.process_input(event)
+	if new_state:
+		change_state(new_state)
+func process_frame(delta: float) ->void:
+	var new_state= current_state.process_frame(delta)
+	if new_state:
+		change_state(new_state)
+```
+
 #### Player State Machine and Script
 What player does for state Machine 
 Script based state machine 
