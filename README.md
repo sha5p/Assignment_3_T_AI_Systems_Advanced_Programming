@@ -41,9 +41,11 @@ func process_input(_event: InputEvent) ->State:
 func process_frame(_delta: float) -> State:
 	return null
 ```
+A state class is what defines all states if they extend the class the engine will run through and check assign values that are currently stated. The player is extended as this code is modulated for all ChracterBody2Ds this means that player does not have to been defined in the player but a refrence to it can be made in the enemy script. Next an animation node is added so that when each state is entered the assigned animation node will be played without constant defintion though this does not play if there is more than one animation defined for smaller state machines this system is used. 
+
 #### State Machine
 ![image](https://github.com/user-attachments/assets/e5b5c700-ef26-455b-a073-a32e485210ff)
-
+A state machine rather than being made for each script is made as a scene as uses refrences to make it modulable over each scene. First exports are deefined as somthing that extends the state class so that only states can be made a refrence to. Then a varity of scripts are used to allow a smooth transisation between the states.
 ```
 extends Node
 @export var starting_state:State
@@ -85,7 +87,7 @@ func process_frame(delta: float) ->void:
 	if new_state:
 		change_state(new_state)
 ```
-
+Tgus
 #### Player State Machine and Script
 What player does for state Machine 
 Script based state machine 
