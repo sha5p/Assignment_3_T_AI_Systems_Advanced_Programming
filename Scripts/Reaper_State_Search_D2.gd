@@ -13,7 +13,6 @@ var speed = 50
 func enter() ->void:
 	z=false
 	timer.start()
-	print(player.global_position, "Reaper check")
 	animation_name = "Search"
 	super()
 func _unhandled_input(_event: InputEvent) ->void:

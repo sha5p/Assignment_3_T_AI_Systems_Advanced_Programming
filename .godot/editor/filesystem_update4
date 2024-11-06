@@ -1,10 +1,9 @@
-res://Reaper.tscn
+res://Scences/Skeleton.tscn
 res://State_Machine/State_Machine.gd
-res://Reaper_State_Search_D2.gd
 res://shockwave.gdshader
+res://Scences/State_Skeleton_Attack.gd
+res://Scences/Reaper.tscn
 res://Scences/Level1.tscn
-res://Scences/Background.tscn
-res://State_Machine/State_Scences/State_Machine.tscn
-res://Scences/Player.tscn
-res://Navigation.tscn
-res://State_Reaper_Summon.gd
+res://Scripts/States_Reaper_Controlling.gd
+res://Scripts/Skeleton.gd
+res://Scences/State_Skeleton_RunAt.gd
