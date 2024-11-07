@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dewies32nhosp"]
+[gd_scene load_steps=90 format=3 uid="uid://dewies32nhosp"]
 
 [ext_resource type="Script" path="res://Scripts/Skeleton.gd" id="1_kgycx"]
 [ext_resource type="Texture2D" uid="uid://c1qne1kdep8q2" path="res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_attack_sheet.png" id="2_tiuu1"]
@@ -375,7 +375,7 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_dtmc4")
 }, {
 "duration": 1.0,
@@ -425,7 +425,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Hit",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -564,6 +564,10 @@ _data = {
 "Attack_1": SubResource("Animation_j78ie")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_40l7h"]
+radius = 14.2857
+height = 40.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["skeli"]]
 scale = Vector2(1.4, 1.4)
 collision_layer = 96
@@ -575,7 +579,8 @@ script = ExtResource("1_kgycx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vs2u7")
-animation = &"Hit"
+animation = &"Run"
+frame_progress = 0.179014
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("6_xqd7s")]
 starting_state = NodePath("D2")
@@ -610,3 +615,12 @@ target_position = Vector2(30, 0)
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 target_position = Vector2(-32.8571, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_40l7h")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

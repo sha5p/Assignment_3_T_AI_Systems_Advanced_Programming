@@ -1,5 +1,5 @@
 extends State
-var speed=20
+var speed=2
 var stateControl:String
 @onready var animated_sprite_2d = $"../../../AnimatedSprite2D"
 
@@ -24,8 +24,10 @@ func _unhandled_input(_event: InputEvent) ->void:
 	pass
 func process_physics(_delta: float) -> State:
 	var players = get_tree().get_nodes_in_group("player")
-	var dir = Vector2((players[0].position.x - parent.global_position.x),20).normalized()
-	parent.velocity= dir * speed
+	var dir = Vector2(players[0].position.x - parent.global_position.x,0)
+	dir=dir.normalized()
+	parent.velocity.x= dir.x*10
+	parent.move_and_slide()
 	if Global.current_dimension == "Dimension2":
 		return null
 	if stateControl == "attack":

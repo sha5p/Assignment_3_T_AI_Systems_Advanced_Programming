@@ -2,6 +2,8 @@ extends State
 signal insturction(state)
 signal insturction_2(state)
 signal Runat(state)
+@export var D2:State
+@export var SearchState:State
 var command=true
 func enter() ->void:
 	var nodes_in_group = get_tree().get_nodes_in_group("skeli")
@@ -19,6 +21,10 @@ func process_physics(_delta: float) -> State:
 		elif node.position != player.position and command:
 			command=false
 			Sig_RunAt()
+	if Global.skeli==0:
+		return SearchState
+	if Global.current_dimension == "Dimension2":
+		return D2
 	return null
 func _process(_delta: float) -> void:
 	pass

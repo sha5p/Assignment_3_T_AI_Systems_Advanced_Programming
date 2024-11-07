@@ -5,6 +5,7 @@ class_name skeli
 @export var player:Node2D
 @onready var ray_1 = $RayCast2D
 @onready var ray_2 = $RayCast2D2
+var health = 2
 signal colliding(info)
 signal Notcolliding(info)
 func _ready():
@@ -13,7 +14,7 @@ func _unhandled_input(event: InputEvent) ->void:
 	state_machine.process_input(event)	
 func _physics_process(delta: float) ->void:
 	faceAt()
-	velocity.y+=40*delta
+	velocity.y=30
 	move_and_slide()
 	state_machine.process_physics(delta)
 	if ray_1.is_colliding() or ray_2.is_colliding():
@@ -35,3 +36,13 @@ func faceAt():
 		animations.flip_h = false
 	else:
 		animations.flip_h = true
+
+
+func _on_area_2d_area_entered(area):
+	animations.play("Hit")
+	if health!=0:
+		health=health-1
+	else:
+		queue_free()
+		Global.skeli=Global.skeli-1
+

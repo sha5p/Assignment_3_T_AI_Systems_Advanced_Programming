@@ -1,12 +1,12 @@
+Node
+CharacterBody2D
 CollisionShape2D
 Area2D
 TileMap
-Node
 RayCast2D
 AnimationPlayer
 AnimatedSprite2D
 NavigationAgent2D
-CharacterBody2D
 Camera2D
 Timer
 ColorRect

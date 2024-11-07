@@ -13,12 +13,12 @@ func enter() ->void:
 	
 	
 	var summon=SKELETON.instantiate()
-	summon.position = Vector2(randf_range(10,1000),493)
+	summon.position = Vector2(randf_range(10,1000),550)
 	add_child(summon)
 	
 	
 	var summon_2=SKELETON.instantiate()
-	summon_2.position = Vector2(randf_range(10,1000),493)
+	summon_2.position = Vector2(randf_range(10,1000),550)
 	add_child(summon_2)
 func _unhandled_input(_event: InputEvent) ->void:
 	pass

@@ -1,14 +1,7 @@
 extends State
-@export var D2_State:State
-@export var Attack_State:State
-@export var RunAt_State:State
-@export var RunAway_State:State
-@export var Summon_State:State
-@onready var nav_agent:= $"../../../NavigationAgent2D" as NavigationAgent2D
-@onready var animated_sprite_2d = $"../../../AnimatedSprite2D"
 @onready var timer = $"../../../Timer"
 @onready var summon = $"../../../Summon"
-
+@onready var nav_agent:= $"../../../NavigationAgent2D" as NavigationAgent2D
 
 var z:bool = false
 var AttaclState:bool=false
@@ -28,7 +21,7 @@ func process_physics(_delta: float) -> State:
 	var dir =parent.to_local(nav_agent.get_next_path_position()).normalized()
 	parent.velocity=dir*speed
 	parent.move_and_slide()
-	if Global.current_dimension == "Dimension2":
+	if Global.current_dimension == "Dimension1":
 		return D2_State
 	if z and Global.skeli==2:
 		parent.velocity = Vector2.ZERO*0
