@@ -87,10 +87,13 @@ func process_frame(delta: float) ->void:
 	if new_state:
 		change_state(new_state)
 ```
-Tgus
+
+
+
 #### Player State Machine and Script
-What player does for state Machine 
-Script based state machine 
+The player runs of 3 diffrent state machines which all control diffrent aspects of the game and inturn affect the user. The include a state machine for attacks, movment and dimension changing. Both the movment and attacks run off the state machine and class above while the dimension changer uses a state machine script. 
+
+Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. Alternativly both the attack and state machine could have run under the same state machine however controlling what is occuring would of had an overlap of functions such as movment code in an attack script. 
 
 ### State Machine Enemy AI
 Basic setup explanation for the state machine here and why it is used
