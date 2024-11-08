@@ -4,6 +4,8 @@ extends State
 @export var Attack_State:State
 @export var RunAt_State:State
 @export var RunAway_State:State
+@export var SearchD2_State:State
+
 
 @onready var animated_sprite_2d = $"../../../AnimatedSprite2D"
 @onready var animation_player = $"../../../AnimationPlayer"
@@ -22,7 +24,10 @@ func process_physics(_delta: float) -> State:
 	if Global.current_dimension == "Dimension2":
 		return D1_State
 	if search:
-		return Search_State
+		if Global.current_dimension == "Dimension2":
+			return SearchD2_State
+		elif Global.current_dimension == "Dimension1":
+			return Search_State
 		search=false
 	return null
 func _process(_delta: float) -> void:

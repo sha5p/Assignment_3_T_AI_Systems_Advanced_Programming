@@ -7,7 +7,7 @@ extends State
 
 
 func enter() ->void:
-	print("DADADDA")
+	pass
 func _unhandled_input(_event: InputEvent) ->void:
 	pass
 func process_physics(_delta: float) -> State:
@@ -15,4 +15,6 @@ func process_physics(_delta: float) -> State:
 		return D1_State
 	return Search_State
 func _process(_delta: float) -> void:
+	pass
+func tree():
 	pass

@@ -10,7 +10,7 @@ var parent: CharacterBody2D
 var player: Node2D
 var animations:AnimatedSprite2D
 func enter() ->void:
-		parent.animations.play(animation_name)
+	parent.animations.play(animation_name)
 func exit() -> void:
 	pass
 func process_input(_event: InputEvent) ->State:
