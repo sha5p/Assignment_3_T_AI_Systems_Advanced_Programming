@@ -296,4 +296,4 @@ However generally it seemed that the user enjoyed the game as shown in the grapt
 
 ### Evulation on Game
 
-Unlike other games before this one had a heavy focus on enemey AI and state machine design
+Unlike other games before this one had a heavy focus on enemey AI and state machine design. This game using a varity of state machines to perform spercific functions including that of controling other mobs, complex enemy states, controling the player and script based state machines. If this assesment were to have been extended polishing on the state machines and taking full advantage of its function to devlop more complex scripts would have been used on more of the mobs rather than just the reaper. In addition adding polish such as a hit stop to the player so the user feels more impact as well as explore more into changing the enviorment and making the dimension feature even more imbended into the game such as parcore routes that can only be taken in one dimension. 
