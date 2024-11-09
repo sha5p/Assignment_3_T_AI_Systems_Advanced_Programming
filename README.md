@@ -93,10 +93,59 @@ func process_frame(delta: float) ->void:
 #### Player State Machine and Script
 The player runs of 3 diffrent state machines which all control diffrent aspects of the game and inturn affect the user. The include a state machine for attacks, movment and dimension changing. Both the movment and attacks run off the state machine and class above while the dimension changer uses a state machine script. 
 
-Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. Alternativly both the attack and state machine could have run under the same state machine however controlling what is occuring would of had an overlap of functions such as movment code in an attack script. 
+Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. These include that of the attack state machine and the movment state machine 
+![image](https://github.com/user-attachments/assets/d2e5d06a-dca5-42b0-8551-c850d6ca08d5)
+
+both in which operating indivdually the attack state machine animations being run in a higher hirecy so animations dont overlap. It was designed using multiple state machines as it allowed for two things two occur on the player at once that being attacking and movment. Alternativly both the attack and state machine could have run under the same state machine however controlling what is occuring would of had an overlap of functions such as movment code in an attack script. 
+
+The script based state machine running off the following code.
+```
+enum Dimension { Dimension1, Dimension2 }
+var current_dimensions = Dimension.Dimension1
+func _ready(): 
+	change()
+func change_dimension(new_dimension):
+	current_dimensions = new_dimension
+	change()
+func change()->void:
+	match current_dimensions:
+		Dimension.Dimension1:
+			current_dimension="Dimension1"
+		Dimension.Dimension2:
+			current_dimension="Dimension2"
+```
+By running this script through an autoloader it allows the dimension to be controlled independent to the scene. However the player can still influence the current state that the player is in. This means that adding another dimension can just be implmented via adding simply enuming the information can be performed and other information can be changed overtime this is because changing or adding a dimension does not cause dependcys. This could have been an addtionaal state to the player however upon testing storing the infromation in this state is more compact and controlling inputs for the user would have less dependencys.
 
 ### State Machine Enemy AI
-Basic setup explanation for the state machine here and why it is used
+To set up the state machines of the main mob or repeaer mob some system needs to be implmented for the current dimension that is being run. The two ways that this can be done is like the player running off two diffrent state machines depending on the dimension or adding addtional hirecy. Because unlike the player running diffrent states at the same time would simply cause bug like playablity and so the use of hirecy state machines was used. This state machine is the same as others except it goes through a hirecy if the function tree() is present. 
+
+```
+if child.has_method("tree"):
+			for sub_child in child.get_children():
+				sub_child.parent=parent
+				sub_child.animations=animations
+				sub_child.player=player
+```
+
+Looping through and adding those to the hirecy as shown. 
+![image](https://github.com/user-attachments/assets/bdc59c03-03fa-4089-94d2-92a4477651fd)
+
+This mob then incoprates path finding by using a navigation agent 2D. Which was done for complex movment for future additions to the game such as obstucles. By getting a refrence to the player and using this inbuilt system the path could be made. 
+```
+func _makepath() ->void:
+	nav_agent.target_position=player.global_position
+func _on_timer_timeout() ->void:
+	_makepath()
+```
+
+Rather than using a customized pathfinding system using godot prebuiilt function allowed for the same functionallty in the short timespawn given for the assesment. 
+
+Then along with movment there were two diffrent mobs that could be summoned that were shown in the planning above which in include a big mob and a skeltons.
+
+##### Skelton Mob and Reaper Control
+
+
+##### Big Guy/Mage
 #### Main Necromancer AI State Machine 
 How hirecy based state machine is used from the player and they talked to allow for information 
 #### Signals via state machine 
