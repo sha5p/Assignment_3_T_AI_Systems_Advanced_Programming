@@ -262,11 +262,10 @@ func _on_timer_2_timeout():
 
 On this timer when ended the direction the mob is moving in would change or stay the same depending on the random function result. 
 
+### Testing and feedback
+
+The first inital struggle was finding a way to control the skeletons mobs individually. This was because a varity of solutions such as making it part of the reaper mob or making both of them their own scenes were iniffcent. Other methods such as relying information through global varibles for signling information became dependent on specific parts of code. And so a varity of tests were made in the best way to make a refrence to the mob. the first method used was looping through the skeletons as a group and finding a refrence then comanding each indivdually. However this did not work as it did not know which skeleton was doing which action only the signals emmiting. And so to solve this the signals emmited by the skeleton emmited themselves along so that the reaper had a refrence. Allowing them to be controlled individully instead of as a group.
 
 
 
-
-#### Main Necromancer AI State Machine 
-How hirecy based state machine is used from the player and they talked to allow for information 
-#### Signals via state machine 
-
+### Conclusion 
