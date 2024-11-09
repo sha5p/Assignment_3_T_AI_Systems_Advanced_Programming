@@ -116,6 +116,14 @@ func change()->void:
 ```
 By running this script through an autoloader it allows the dimension to be controlled independent to the scene. However the player can still influence the current state that the player is in. This means that adding another dimension can just be implmented via adding simply enuming the information can be performed and other information can be changed overtime this is because changing or adding a dimension does not cause dependcys. This could have been an addtionaal state to the player however upon testing storing the infromation in this state is more compact and controlling inputs for the user would have less dependencys.
 
+### Invorment 
+Addtionally the use of the enum operating indivdually lets it easily comminicate with enviorment scripts which than change the dimension depending on the information. Immersing the user and letting them know to expect and diffrent outcome because of the dimension change
+
+|Diemension 1|Dimension 2|
+|:-----|:----|
+|![image](https://github.com/user-attachments/assets/25ea02c1-b269-40f9-bea5-3db0151ed448)|![image](https://github.com/user-attachments/assets/682dd714-b701-4f84-b877-78caf640de21)|
+
+The would also change the player based on the dimension in one a 'lighter' stickman which can jump around and in the other a more beefed up mob which though cannot jump has less obsticles and enemys to fight.
 ### State Machine Enemy AI
 To set up the state machines of the main mob or repeaer mob some system needs to be implmented for the current dimension that is being run. The two ways that this can be done is like the player running off two diffrent state machines depending on the dimension or adding addtional hirecy. Because unlike the player running diffrent states at the same time would simply cause bug like playablity and so the use of hirecy state machines was used. This state machine is the same as others except it goes through a hirecy if the function tree() is present. 
 
@@ -216,11 +224,49 @@ Once these mobs have been killed if the dimension is still in 1 than the reaper 
 If the dimension is changed the reaper will spawn a diffrent mob while attacking. This is because the mob spawned is not controlled by the reaper which has the following state machine. 
 
 ##### Big Guy/Mage
-A majority of this mob runs off timers and randomizes creating a unqiue and diffrent mob. This mob was designed to be very diffrent to how the other mobs run for instance the mob cannot be killed by the player instead they can only die after the lifetime or the 'timer' has run out what 
+A majority of this mob runs off timers and randomizes creating a unqiue and diffrent mob. This mob was designed to be very diffrent to how the other mobs run for instance the mob cannot be killed by the player instead they can only die after the lifetime or the 'timer' has run out. The states of the timer are controlled as follows
+
+
+```
+func process_physics(_delta: float) -> State:
+	if death:
+		return death_state
+	if attack:
+		attack=false
+		return Relax_State
+	return null
+func _process(_delta: float) -> void:
+	pass
+func _on_timer_timeout():
+	death=true
+func _on_attack_finished_timeout():
+	attack =true
+```
+
+On the mob a few timers are set the main concept though is that the mob will die once a timer runs out and this timer works through each state machine so no matter what function it is operating on it will die after a span of time. However the way this mob deals damage to the player is somthing that is hard to avoid accounting for what may have been an easy experience. Instead of incoprating the timer function throughout the statmachine it couold have been used at the top of the hirecy. However because of the abudence of timer nodes used in this mob running though using a state machine in this way signifcantly reduces what has to be done deisgned for this mob. 
+
+The attack function using raycasts like the skeleton mob however running by itself and shooting at whaever is casted to it. This raycast can however hit the reaper mob and deal damage to it adding more depth and stratgey for the player if they so choose. 
+
+
+
+The movment of this mob was also designed to be less predictble running on a randoom function to decide which direction it can move in 
+```
+func change_direction():
+	direction = randf_range(-1, 1)
+
+
+func _on_timer_2_timeout():
+	if parent.velocity.x != 0:
+		change_direction()
+```
+
+On this timer when ended the direction the mob is moving in would change or stay the same depending on the random function result. 
+
+
 
 
 
 #### Main Necromancer AI State Machine 
 How hirecy based state machine is used from the player and they talked to allow for information 
 #### Signals via state machine 
-#### Companion follows
+
