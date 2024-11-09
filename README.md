@@ -1,4 +1,4 @@
-# Assignment_3(T)-AI_Systems_(Advanced_Programming)
+![image](https://github.com/user-attachments/assets/30b03fe2-2857-4d49-8540-7a7e79b76f1a)# Assignment_3(T)-AI_Systems_(Advanced_Programming)
 ## **Documentation State Machine** 
 
 
@@ -266,6 +266,29 @@ On this timer when ended the direction the mob is moving in would change or stay
 
 The first inital struggle was finding a way to control the skeletons mobs individually. This was because a varity of solutions such as making it part of the reaper mob or making both of them their own scenes were iniffcent. Other methods such as relying information through global varibles for signling information became dependent on specific parts of code. And so a varity of tests were made in the best way to make a refrence to the mob. the first method used was looping through the skeletons as a group and finding a refrence then comanding each indivdually. However this did not work as it did not know which skeleton was doing which action only the signals emmiting. And so to solve this the signals emmited by the skeleton emmited themselves along so that the reaper had a refrence. Allowing them to be controlled individully instead of as a group.
 
+Feedback from users suggested a few diffrent incoprations to improve upon the came. The first suggested to improve upon the player and its 'sluggish' movment along with how the combat felt.
+
+![image](https://github.com/user-attachments/assets/37d5c98c-a3bb-4434-8705-2728ff12950a)
+
+taking in on request from the user the combat system was improve upon adding a cancel to the skeletons attack if hit.
+
+![image](https://github.com/user-attachments/assets/1b388c04-cd75-49d3-b3ed-21c354f7ab70)
+
+This was done by running the animation through a function that doesnt go through the -> States allowing it to bypass the current animation being played which is why damage taken is not a state in any other mob a built upon this system. 
 
 
-### Conclusion 
+The second test user asked for the addition of indications the the when the reaper would attack next and so a radius was added to the reaper to show how far it could see 
+
+![image](https://github.com/user-attachments/assets/9ef2280d-de7e-4f8e-b41c-5ccb5b5fedd6)
+
+Which not only improved upon the combat like the first user asked for but solved the problem of a lack of being able to predict where the mob could go. 
+
+Lastly the final user asked for indications that the reaper was controling the skeleton mob 
+![image](https://github.com/user-attachments/assets/d9b95ba8-b901-4808-b45c-41216aab25db)
+and so the use of the same animation of 'rune like' symbol was used when controling the skeleton mob 
+
+![image](https://github.com/user-attachments/assets/6338cdc5-6a8f-4fb0-8255-a98a324eb394) 
+![image](https://github.com/user-attachments/assets/aea86275-543c-4ae5-9bbf-bd90610d58ba)
+
+
+### Evulation on code  
