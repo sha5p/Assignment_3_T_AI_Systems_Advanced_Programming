@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh85vsbk2w7ev"]
+
+[ext_resource type="Script" path="res://the_end.gd" id="1_12km4"]
+
+[node name="The End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12km4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 328.0
+offset_top = 279.0
+offset_right = 764.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 40
+text = "The End you beat him!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 379.0
+offset_right = 663.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

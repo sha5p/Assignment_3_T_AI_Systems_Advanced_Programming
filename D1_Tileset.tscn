@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://xi6mdtnau46u"]
 
 [ext_resource type="Texture2D" uid="uid://cwy0qxx872cnu" path="res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day.png" id="1_5sq0g"]
-[ext_resource type="Script" path="res://D1_Tileset.gd" id="2_pimpm"]
+[ext_resource type="Script" path="res://Scripts/D1_Tileset.gd" id="2_pimpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfdn0"]
 texture = ExtResource("1_5sq0g")

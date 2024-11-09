@@ -10,7 +10,7 @@ func enter() ->void:
 	parent.move_and_slide()
 	
 	var summon=BIG_MOB_D_2.instantiate()
-	summon.position = Vector2(randf_range(10,1000),550)
+	summon.position = Vector2(randf_range(1000,1500),550)
 	add_child(summon)
 func _unhandled_input(_event: InputEvent) ->void:
 	pass

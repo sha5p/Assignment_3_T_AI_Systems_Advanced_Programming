@@ -25,7 +25,7 @@ func _unhandled_input(_event: InputEvent) ->void:
 func process_physics(_delta: float) -> State:
 	
 	if player:
-		pass
+		face_player()
 	var dir =parent.to_local(nav_agent.get_next_path_position()).normalized()
 	parent.velocity=dir*speed
 	parent.move_and_slide()
@@ -58,7 +58,10 @@ func _on_timer_timeout() ->void:
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and not timer.is_stopped() and Global.bigGuy==1 and Global.current_dimension == "Dimension2":
+		parent.position=player.global_position
+		timer.stop()
 		z=true
 	if body.is_in_group("player") and not timer.is_stopped() and Global.bigGuy==0 and Global.current_dimension == "Dimension2":
 		parent.position=player.global_position
 		timer.stop()
+		AttaclState=true

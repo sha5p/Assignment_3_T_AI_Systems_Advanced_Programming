@@ -1,12 +1,13 @@
-[gd_scene load_steps=46 format=3 uid="uid://dnw6o4svnlvgj"]
+[gd_scene load_steps=47 format=3 uid="uid://dnw6o4svnlvgj"]
 
 [ext_resource type="Texture2D" uid="uid://bdgauw58lhlg2" path="res://Assests/Demons/Mage/Mage_.png" id="1_62x1k"]
-[ext_resource type="Script" path="res://Big_Mob_D2.gd" id="1_mr7ls"]
+[ext_resource type="Script" path="res://Scripts/Big_Mob_D2.gd" id="1_g6xlm"]
 [ext_resource type="PackedScene" uid="uid://hcmmpsxjruab" path="res://State_Machine/State_Scences/State_Machine.tscn" id="2_sslpr"]
-[ext_resource type="Script" path="res://Big_Mob_Attack_State.gd" id="3_j0kae"]
-[ext_resource type="Script" path="res://State_Attack2_BigGuy.gd" id="5_5smkr"]
-[ext_resource type="Script" path="res://State_Relax_BigGuy.gd" id="5_ah8ub"]
-[ext_resource type="Script" path="res://Big_Guy_Death.gd" id="7_yl8u5"]
+[ext_resource type="Script" path="res://Scripts/Big_Mob_Attack_State.gd" id="4_2jsio"]
+[ext_resource type="Script" path="res://Scripts/State_Attack2_BigGuy.gd" id="5_47nal"]
+[ext_resource type="Script" path="res://Scripts/State_Relax_BigGuy.gd" id="6_hci5y"]
+[ext_resource type="Script" path="res://Scripts/Big_Guy_Death.gd" id="7_lgtqf"]
+[ext_resource type="Script" path="res://Scripts/bigguy_Damage.gd" id="8_chlac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxhct"]
 atlas = ExtResource("1_62x1k")
@@ -491,7 +492,7 @@ _data = {
 
 [node name="Big_Mov_D2" type="CharacterBody2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_mr7ls")
+script = ExtResource("1_g6xlm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -513,23 +514,23 @@ shape = SubResource("CircleShape2D_l0egx")
 starting_state = NodePath("Relax")
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("death_state", "Relax_State")]
-script = ExtResource("3_j0kae")
+script = ExtResource("4_2jsio")
 death_state = NodePath("../Death")
 Relax_State = NodePath("../Relax")
 
 [node name="Attack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("death_state", "Relax_State")]
-script = ExtResource("5_5smkr")
+script = ExtResource("5_47nal")
 death_state = NodePath("../Death")
 Relax_State = NodePath("../Relax")
 
 [node name="Relax" type="Node" parent="StateMachine" node_paths=PackedStringArray("death_state", "Attack_State_2", "Attack_State")]
-script = ExtResource("5_ah8ub")
+script = ExtResource("6_hci5y")
 death_state = NodePath("../Death")
 Attack_State_2 = NodePath("../Attack2")
 Attack_State = NodePath("../Attack")
 
 [node name="Death" type="Node" parent="StateMachine"]
-script = ExtResource("7_yl8u5")
+script = ExtResource("7_lgtqf")
 
 [node name="leftCast" type="RayCast2D" parent="."]
 target_position = Vector2(-47.3333, -0.666667)
@@ -538,6 +539,9 @@ target_position = Vector2(-47.3333, -0.666667)
 target_position = Vector2(104.667, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 20
+collision_mask = 20
+script = ExtResource("8_chlac")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(35.3333, 3)
@@ -560,8 +564,8 @@ one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="StateMachine/Attack" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="StateMachine/Relax" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="StateMachine/Attack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="StateMachine/Relax" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="StateMachine/Relax" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="death" to="StateMachine/Death" method="_on_death_timeout"]
 [connection signal="timeout" from="Attack finished" to="StateMachine/Attack" method="_on_attack_finished_timeout"]

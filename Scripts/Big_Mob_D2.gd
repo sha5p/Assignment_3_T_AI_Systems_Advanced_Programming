@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 
 func _ready():
+	Global.bigGuy=0
 	timer.start()
 	state_machine.init(self, animations,player)
 func _unhandled_input(event: InputEvent) ->void:

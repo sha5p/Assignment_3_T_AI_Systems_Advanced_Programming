@@ -3,6 +3,7 @@ var stateControl:String
 @export var RunAt:State
 @onready var nodes_in_group = get_tree().get_nodes_in_group("control")
 @onready var animated_sprite_2d = $"../../../AnimatedSprite2D"
+@onready var animation_player = $"../../../AnimationPlayer"
 
 
 
@@ -11,6 +12,10 @@ func enter():
 	var first_node = nodes_in_group[0]
 	parent.velocity = Vector2.ZERO
 	animation_name = "Attack"
+	if !animated_sprite_2d.flip_h:
+		animation_player.play("Attack_1")
+	else:
+		animation_player.play("Attack_2")
 	animated_sprite_2d.play("Attack")
 	if z:
 		first_node.connect("Runat", Callable(self, "state_func"))

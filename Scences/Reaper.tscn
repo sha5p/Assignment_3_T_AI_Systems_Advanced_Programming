@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dqj5uwdminnwh"]
+[gd_scene load_steps=98 format=3 uid="uid://dqj5uwdminnwh"]
 
 [ext_resource type="PackedScene" uid="uid://hcmmpsxjruab" path="res://State_Machine/State_Scences/State_Machine.tscn" id="1_cx0c4"]
 [ext_resource type="Script" path="res://Scripts/Demon_Mob_Reaper.gd" id="1_s55ng"]
@@ -16,10 +16,12 @@
 [ext_resource type="Script" path="res://Scripts/Reaper_State_Search_D2.gd" id="11_uyvw3"]
 [ext_resource type="Script" path="res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAt.gd" id="12_5tumj"]
 [ext_resource type="Script" path="res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAway.gd" id="13_toa3o"]
-[ext_resource type="Script" path="res://Scences/State_Summon_Big.gd" id="17_sknhn"]
-[ext_resource type="Script" path="res://Scences/State_Search_d2.gd" id="18_7lnwf"]
+[ext_resource type="Script" path="res://Scripts/State_Summon_Big.gd" id="17_myuxb"]
+[ext_resource type="Script" path="res://Scripts/State_Search_d2.gd" id="18_bb2je"]
 [ext_resource type="Script" path="res://Scences/Attack_State_D2.gd" id="19_6d1o4"]
+[ext_resource type="Script" path="res://Scripts/reaper_damage.gd" id="20_gtfuk"]
 [ext_resource type="Texture2D" uid="uid://bw1847lkhs3hr" path="res://Assests/ClearCircle.png" id="20_qi3j6"]
+[ext_resource type="Script" path="res://Scences/Area2D2.gd" id="22_7ggty"]
 
 [sub_resource type="Animation" id="Animation_861jy"]
 resource_name = "Attack"
@@ -783,13 +785,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjn7n"]
-size = Vector2(43, 60)
+size = Vector2(30.5, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5xo0"]
 radius = 203.039
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kumv1"]
 height = 103.479
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ju4x4"]
+radius = 36.0
+height = 158.0
 
 [node name="Mob_Reaper" type="CharacterBody2D"]
 collision_layer = 2
@@ -821,7 +827,7 @@ frame = 11
 frame_progress = 0.043741
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 7)
+position = Vector2(-7.5, 6)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_fjn7n")
 
@@ -866,12 +872,14 @@ D1_State = NodePath("../D1")
 Search_State = NodePath("Search")
 Summon_State = NodePath("Summon")
 
-[node name="Summon" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("Attack_State")]
-script = ExtResource("17_sknhn")
+[node name="Summon" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("D1_State", "Attack_State")]
+script = ExtResource("17_myuxb")
+D1_State = NodePath("../../D1")
 Attack_State = NodePath("../../D1/Attack")
 
-[node name="Search" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("Attack_State", "Summon_State")]
-script = ExtResource("18_7lnwf")
+[node name="Search" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("D1_State", "Attack_State", "Summon_State")]
+script = ExtResource("18_bb2je")
+D1_State = NodePath("../../D1")
 Attack_State = NodePath("../../D1/Attack")
 Summon_State = NodePath("../Summon")
 
@@ -884,6 +892,9 @@ script = ExtResource("19_6d1o4")
 shape = SubResource("CircleShape2D_a5xo0")
 
 [node name="Attack" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("20_gtfuk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
 position = Vector2(61, 16)
@@ -895,7 +906,16 @@ position = Vector2(0, 2)
 scale = Vector2(1, 0.964)
 texture = ExtResource("20_qi3j6")
 
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("22_7ggty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CapsuleShape2D_ju4x4")
+
 [connection signal="timeout" from="Timer" to="StateMachine/D1/Search" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/D1/Attack" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="StateMachine/D1/Search" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="StateMachine/D2/Search" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]

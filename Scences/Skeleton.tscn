@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://dewies32nhosp"]
+[gd_scene load_steps=116 format=3 uid="uid://dewies32nhosp"]
 
 [ext_resource type="Script" path="res://Scripts/Skeleton.gd" id="1_kgycx"]
 [ext_resource type="Texture2D" uid="uid://c1qne1kdep8q2" path="res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_attack_sheet.png" id="2_tiuu1"]
@@ -6,11 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dgix4a7um1co4" path="res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_walk_sheet.png" id="4_8rp1i"]
 [ext_resource type="Texture2D" uid="uid://cpm54xgf2anjv" path="res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_hurt_sheet.png" id="5_wslh1"]
 [ext_resource type="PackedScene" uid="uid://hcmmpsxjruab" path="res://State_Machine/State_Scences/State_Machine.tscn" id="6_xqd7s"]
-[ext_resource type="Script" path="res://State_Skeleton_D2.gd" id="7_p7f86"]
-[ext_resource type="Script" path="res://Scences/States_Skeleton_RunAway.gd" id="8_ftqnu"]
-[ext_resource type="Script" path="res://Scences/State_Skeleton_Attack.gd" id="9_ywvnd"]
-[ext_resource type="Script" path="res://Scences/State_Skeleton_RunAt.gd" id="10_3hexg"]
+[ext_resource type="Script" path="res://Scripts/State_Skeleton_D2.gd" id="7_0rc6w"]
+[ext_resource type="Script" path="res://Scripts/States_Skeleton_RunAway.gd" id="8_2ddmq"]
+[ext_resource type="Script" path="res://Scripts/State_Skeleton_Attack.gd" id="9_gehi1"]
+[ext_resource type="Script" path="res://Scripts/State_Skeleton_RunAt.gd" id="10_3qb6p"]
 [ext_resource type="Texture2D" uid="uid://dow8qxp87iqb8" path="res://Assests/Tree_of_Glory-Sheet.png" id="11_giruu"]
+[ext_resource type="Script" path="res://Scripts/Skelton_attack.gd" id="12_8lyr1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjm33"]
 atlas = ExtResource("2_tiuu1")
@@ -559,10 +560,92 @@ height = 40.0
 
 [sub_resource type="Animation" id="Animation_j78ie"]
 resource_name = "Attack_1"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D2/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(17.8571, 5.71429), Vector2(16.4286, 5.71429)]
+}
+
+[sub_resource type="Animation" id="Animation_jpc0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D2/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16.4286, 5.71429)]
+}
+
+[sub_resource type="Animation" id="Animation_iaaht"]
+resource_name = "Attack_2"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D2/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 5)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mix2q"]
 _data = {
-"Attack_1": SubResource("Animation_j78ie")
+"Attack_1": SubResource("Animation_j78ie"),
+"Attack_2": SubResource("Animation_iaaht"),
+"RESET": SubResource("Animation_jpc0u")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4oua"]
@@ -717,6 +800,10 @@ animations = [{
 radius = 14.2857
 height = 40.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cf83t"]
+radius = 4.28571
+height = 24.2857
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["skeli"]]
 scale = Vector2(1.4, 1.4)
 collision_layer = 96
@@ -728,27 +815,28 @@ script = ExtResource("1_kgycx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vs2u7")
-animation = &"Run"
-frame_progress = 0.179014
+animation = &"Attack"
+frame_progress = 0.549546
+flip_h = true
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("6_xqd7s")]
 starting_state = NodePath("D2")
 
 [node name="D2" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack", "runat", "runaway")]
-script = ExtResource("7_p7f86")
+script = ExtResource("7_0rc6w")
 attack = NodePath("Attack")
 runat = NodePath("RunAt")
 runaway = NodePath("RunAway")
 
 [node name="RunAway" type="Node" parent="StateMachine/D2"]
-script = ExtResource("8_ftqnu")
+script = ExtResource("8_2ddmq")
 
 [node name="Attack" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("RunAt")]
-script = ExtResource("9_ywvnd")
+script = ExtResource("9_gehi1")
 RunAt = NodePath("../RunAt")
 
 [node name="RunAt" type="Node" parent="StateMachine/D2" node_paths=PackedStringArray("attack")]
-script = ExtResource("10_3hexg")
+script = ExtResource("10_3qb6p")
 attack = NodePath("../Attack")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -779,5 +867,15 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_40l7h")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("12_8lyr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(16.4286, 5.71429)
+shape = SubResource("CapsuleShape2D_cf83t")
+disabled = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

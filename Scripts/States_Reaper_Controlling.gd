@@ -23,8 +23,6 @@ func process_physics(_delta: float) -> State:
 			Sig_RunAt()
 	if Global.skeli==0:
 		return SearchState
-	if Global.current_dimension == "Dimension2":
-		return D2
 	return null
 func _process(_delta: float) -> void:
 	pass

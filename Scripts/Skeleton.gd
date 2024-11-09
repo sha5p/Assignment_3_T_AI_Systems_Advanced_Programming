@@ -38,7 +38,7 @@ func faceAt():
 		animations.flip_h = true
 
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	animations.play("Hit")
 	if health!=0:
 		health=health-1

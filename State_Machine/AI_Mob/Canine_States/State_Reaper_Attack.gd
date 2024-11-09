@@ -21,8 +21,6 @@ func enter() ->void:
 func _unhandled_input(_event: InputEvent) ->void:
 	pass
 func process_physics(_delta: float) -> State:
-	if Global.current_dimension == "Dimension2":
-		return D1_State
 	if search:
 		if Global.current_dimension == "Dimension2":
 			return SearchD2_State

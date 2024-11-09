@@ -19,3 +19,7 @@ func _on_setting_button_pressed():
 	options.set_process(true)
 	margin_container.set_process(false)
 	options.visible = true
+
+
+func _on_button_2_pressed():
+	get_tree().change_scene_to_file("res://Scences/Level1.tscn")

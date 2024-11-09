@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://ba50nhqng6bp1"]
+[gd_scene load_steps=73 format=3 uid="uid://ba50nhqng6bp1"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_731vh"]
 [ext_resource type="Texture2D" uid="uid://beesegry41mgs" path="res://Assests/StickmanPack/Idle/thickIdleSheet.png" id="2_0tfk6"]
@@ -787,6 +787,9 @@ _data = {
 "disort": SubResource("Animation_3ti3g")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h08c6"]
+height = 64.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 65
 collision_mask = 65
@@ -897,6 +900,14 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_h08c6")
+
 [connection signal="body_entered" from="Attack" to="Attack_StateMachine2/Attack" method="_on_attack_body_entered"]
 [connection signal="timeout" from="Timer" to="Attack_StateMachine2/Attack" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Attack_StateMachine2/Attack" method="_on_timer_2_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

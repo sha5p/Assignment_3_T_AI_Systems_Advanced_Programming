@@ -1,6 +1,6 @@
 extends TileMap
 
-func _physics_process(delta: float) ->void:
+func _physics_process(_delta: float) ->void:
 	var tile_map = $"."
 	if Global.current_dimension == "Dimension2":
 		tile_map.visible=true

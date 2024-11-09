@@ -1,23 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731108398
-Big_Mob_Attack_State.gd::GDScript::-1::1731107981::0::1::::<>State<>::
-Big_Mob_D2.gd::GDScript::-1::1731108333::0::1::::<>CharacterBody2D<>::
-Big_Mob_D2.tscn::PackedScene::8119042108809074929::1731108398::0::1::::<><>::uid://bdgauw58lhlg2::::res://Assests/Demons/Mage/Mage_.png<>res://Big_Mob_D2.gd<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://Big_Mob_Attack_State.gd<>res://State_Attack2_BigGuy.gd<>res://State_Relax_BigGuy.gd<>res://Big_Guy_Death.gd
-D1_Tileset.gd::GDScript::-1::1730855414::0::1::::<>TileMap<>::
-D1_Tileset.tscn::PackedScene::1632762269522657702::1730855414::0::1::::<><>::uid://cwy0qxx872cnu::::res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day.png<>res://D1_Tileset.gd
-D2_TileSet.gd::GDScript::-1::1730855324::0::1::::<>TileMap<>::
-D2_TileSet.tscn::PackedScene::1117567727936098162::1730855415::0::1::::<><>::uid://wrxrf27ar1u1::::res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night.png<>res://D2_TileSet.gd
+::res://::1731114765
+Big_Mob_D2.tscn::PackedScene::8119042108809074929::1731114765::0::1::::<><>::uid://bdgauw58lhlg2::::res://Assests/Demons/Mage/Mage_.png<>res://Scripts/Big_Mob_D2.gd<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://Scripts/Big_Mob_Attack_State.gd<>res://Scripts/State_Attack2_BigGuy.gd<>res://Scripts/State_Relax_BigGuy.gd<>res://Scripts/Big_Guy_Death.gd<>res://Scripts/bigguy_Damage.gd
+D1_Tileset.tscn::PackedScene::1632762269522657702::1731114665::0::1::::<><>::uid://cwy0qxx872cnu::::res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day.png<>res://Scripts/D1_Tileset.gd
+D2_TileSet.tscn::PackedScene::1117567727936098162::1731114665::0::1::::<><>::uid://wrxrf27ar1u1::::res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night.png<>res://Scripts/D2_TileSet.gd
 Global_Varibles.gd::GDScript::-1::1731016790::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::7291430915803423784::1729148241::1729148427::1::::<><>::
-README.md::TextFile::-1::1730861790::0::1::::<><>::
-Big_Guy_Death.gd::GDScript::-1::1731108344::0::1::::<>State<>::
-State_Attack2_BigGuy.gd::GDScript::-1::1731107966::0::1::::<>State<>::
+README.md::TextFile::-1::1731109114::0::1::::<><>::
 SaveData.gd::GDScript::-1::1729148241::0::1::::<>Node<>::
 SaveSettings.gd::GDScript::-1::1729317256::0::1::::<>Node<>::
-shockwave.gdshader::Shader::-1::1731108398::0::1::::<><>::
-State_Relax_BigGuy.gd::GDScript::-1::1731107966::0::1::::<>State<>::
-State_Skeleton_D2.gd::GDScript::-1::1729926531::0::1::::<>State<>::
-::res://Assests/::1731108477
+shockwave.gdshader::Shader::-1::1731114765::0::1::::<><>::
+the_end.tscn::PackedScene::7720568381340943357::1731114765::0::1::::<><>::
+::res://Assests/::1731108481
 ClearCircle.png::CompressedTexture2D::3986306212324404847::1731108462::1731108481::1::::<><>::
 Tree_of_Glory-Sheet.png::CompressedTexture2D::8189355638816427555::1729763146::1729763177::1::::<><>::
 ::res://Assests/Backgrounds_Parrlax/::1729319948
@@ -203,24 +196,19 @@ undead_idle_sheet.png::CompressedTexture2D::761906081727791476::1729668732::1729
 undead_walk_sheet.png::CompressedTexture2D::7598358464156356881::1729668732::1729668754::1::::<><>::
 ::res://Audio_Managment/::1729148241
 default_bus_layout.tres::AudioBusLayout::7041686083903452881::1729148241::0::1::::<><>::
-::res://Scences/::1731108398
+::res://Scences/::1731114765
+Area2D2.gd::GDScript::-1::1731114623::0::1::::<>Area2D<>::
 Attack_State_D2.gd::GDScript::-1::1731062806::0::1::::<>State<>::
 Background.tscn::PackedScene::131457610055569659::1730411026::0::1::::<><>::res://Scripts/Background.gd<>uid://bevqb2e8t5eci::::res://Scences/parallax_background.tscn<>uid://bnxpqln51xhed::::res://Scences/parallax_background_2.tscn<>res://shockwave.gdshader
-Level1.tscn::PackedScene::5982297893620660438::1731108398::0::1::::<><>::uid://ba50nhqng6bp1::::res://Scences/Player.tscn<>uid://b4xc8kjavtg2::::res://Scences/Background.tscn<>uid://dqj5uwdminnwh::::res://Scences/Reaper.tscn<>uid://b6feiyrkww85g::::res://Scences/Navigation.tscn<>uid://p6mga3xkf4ru::::res://D2_TileSet.tscn<>uid://xi6mdtnau46u::::res://D1_Tileset.tscn<>uid://dnw6o4svnlvgj::::res://Big_Mob_D2.tscn
+Level1.tscn::PackedScene::5982297893620660438::1731114765::0::1::::<><>::uid://ba50nhqng6bp1::::res://Scences/Player.tscn<>uid://b4xc8kjavtg2::::res://Scences/Background.tscn<>uid://dqj5uwdminnwh::::res://Scences/Reaper.tscn<>uid://b6feiyrkww85g::::res://Scences/Navigation.tscn<>uid://p6mga3xkf4ru::::res://D2_TileSet.tscn<>uid://xi6mdtnau46u::::res://D1_Tileset.tscn
 Navigation.tscn::PackedScene::4572855166871444886::1730686705::0::1::::<><>::uid://wrxrf27ar1u1::::res://Assests/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night.png
 parallax_background.tscn::PackedScene::2711502674594268956::1729644143::0::1::::<><>::uid://bvwptic750qp1::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/10_Sky.png<>uid://dk634owho84l1::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/09_Forest.png<>uid://bt8ipquylxq8t::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/08_Forest.png<>uid://chuyvp2rkoxro::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/07_Forest.png<>uid://cc0kg2hlwhrml::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/06_Forest.png<>uid://b6mi044bijjxr::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/05_Particles.png<>uid://cabbj013o64wg::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/03_Particles.png<>uid://byav3qsxedcds::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/04_Forest.png<>uid://bv14a8oun33m::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/02_Bushes.png<>uid://b26ufrejrw66l::::res://Assests/Backgrounds_Parrlax/Parallax Forest Background - Blue/01_Mist.png
 parallax_background_2.tscn::PackedScene::3347296266162900863::1729644143::0::1::::<><>::uid://ccs3ysqh2uber::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-bg.png<>uid://cdgm4qj5esb3x::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-far-trees.png<>uid://babpe0r47exp2::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-mid-trees.png<>uid://bn5dbc8ghxnkd::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-close-trees.png
-Player.tscn::PackedScene::2449893549435039892::1731107373::0::1::::<><>::res://Scripts/Player.gd<>uid://beesegry41mgs::::res://Assests/StickmanPack/Idle/thickIdleSheet.png<>uid://ds5r4j1rhn0eg::::res://Assests/StickmanPack/Punch/thickPunchSheet.png<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>uid://c1m86di1narcq::::res://Assests/StickmanPack/Run/thickRunSheet.png<>res://State_Machine/Player_States/State_Player_Idle.gd<>res://State_Machine/Player_States/State_Player_Jump.gd<>uid://xufd5q4oil2g::::res://Assests/DarkMan/Assets.png<>res://State_Machine/Player_States/State_Player_Move.gd<>res://State_Machine/Player_States/State_Player_Fall.gd<>res://Scripts/State_Player_wait.gd<>res://Scripts/State_Player_Attack.gd<>res://shockwave.gdshader
-Reaper.tscn::PackedScene::8302721335440010063::1731108398::0::1::::<><>::uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://Scripts/Demon_Mob_Reaper.gd<>uid://cc2kqynkc0q12::::res://Assests/Undead executioner puppet/png/summon.png<>uid://buh6v18cqn1sn::::res://Assests/Undead executioner puppet/png/attacking.png<>uid://dagefonucaksp::::res://Assests/Undead executioner puppet/png/skill1.png<>uid://dfr261ejoexw8::::res://Assests/Undead executioner puppet/png/summonAppear.png<>uid://cmon3wle016ox::::res://Assests/Undead executioner puppet/png/idle2.png<>uid://dow8qxp87iqb8::::res://Assests/Tree_of_Glory-Sheet.png<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_D1.gd<>res://Scripts/State_Reaper_Summon.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_D2.gd<>res://Scripts/States_Reaper_Controlling.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_Attack.gd<>res://Scripts/Reaper_State_Search_D2.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAt.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAway.gd<>res://Scences/State_Summon_Big.gd<>res://Scences/State_Search_d2.gd<>res://Scences/Attack_State_D2.gd
+Player.tscn::PackedScene::2449893549435039892::1731114765::0::1::::<><>::res://Scripts/Player.gd<>uid://beesegry41mgs::::res://Assests/StickmanPack/Idle/thickIdleSheet.png<>uid://ds5r4j1rhn0eg::::res://Assests/StickmanPack/Punch/thickPunchSheet.png<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>uid://c1m86di1narcq::::res://Assests/StickmanPack/Run/thickRunSheet.png<>res://State_Machine/Player_States/State_Player_Idle.gd<>res://State_Machine/Player_States/State_Player_Jump.gd<>uid://xufd5q4oil2g::::res://Assests/DarkMan/Assets.png<>res://State_Machine/Player_States/State_Player_Move.gd<>res://State_Machine/Player_States/State_Player_Fall.gd<>res://Scripts/State_Player_wait.gd<>res://Scripts/State_Player_Attack.gd<>res://shockwave.gdshader
+Reaper.tscn::PackedScene::8302721335440010063::1731114765::0::1::::<><>::uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://Scripts/Demon_Mob_Reaper.gd<>uid://cc2kqynkc0q12::::res://Assests/Undead executioner puppet/png/summon.png<>uid://buh6v18cqn1sn::::res://Assests/Undead executioner puppet/png/attacking.png<>uid://dagefonucaksp::::res://Assests/Undead executioner puppet/png/skill1.png<>uid://dfr261ejoexw8::::res://Assests/Undead executioner puppet/png/summonAppear.png<>uid://cmon3wle016ox::::res://Assests/Undead executioner puppet/png/idle2.png<>uid://dow8qxp87iqb8::::res://Assests/Tree_of_Glory-Sheet.png<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_D1.gd<>res://Scripts/State_Reaper_Summon.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_D2.gd<>res://Scripts/States_Reaper_Controlling.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_Attack.gd<>res://Scripts/Reaper_State_Search_D2.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAt.gd<>res://State_Machine/AI_Mob/Canine_States/State_Reaper_RunAway.gd<>res://Scripts/State_Summon_Big.gd<>res://Scripts/State_Search_d2.gd<>res://Scences/Attack_State_D2.gd<>res://Scripts/reaper_damage.gd<>uid://bw1847lkhs3hr::::res://Assests/ClearCircle.png<>res://Scences/Area2D2.gd
 shockwave.tscn::PackedScene::1222914034587466915::1729644143::0::1::::<><>::uid://ccs3ysqh2uber::::res://Assests/Backgrounds_Parrlax/Parakkax_demon_woods/parallax-demon-woods-bg.png
-Skeleton.tscn::PackedScene::7485927605257746067::1731107874::0::1::::<><>::res://Scripts/Skeleton.gd<>uid://c1qne1kdep8q2::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_attack_sheet.png<>uid://k4cqnav0p0g3::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_idle_sheet.png<>uid://dgix4a7um1co4::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_walk_sheet.png<>uid://cpm54xgf2anjv::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_hurt_sheet.png<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://State_Skeleton_D2.gd<>res://Scences/States_Skeleton_RunAway.gd<>res://Scences/State_Skeleton_Attack.gd<>res://Scences/State_Skeleton_RunAt.gd<>uid://dow8qxp87iqb8::::res://Assests/Tree_of_Glory-Sheet.png
-States_Skeleton_RunAway.gd::GDScript::-1::1729926641::0::1::::<>State<>::
-State_Search_d2.gd::GDScript::-1::1731108192::0::1::::<>State<>::
-State_Skeleton_Attack.gd::GDScript::-1::1730861546::0::1::::<>State<>::
-State_Skeleton_RunAt.gd::GDScript::-1::1730880970::0::1::::<>State<>::
-State_Summon_Big.gd::GDScript::-1::1731108273::0::1::::<>State<>::
-::res://Scences/Menu_Scences/::1730254127
-main_menu.tscn::PackedScene::5270251163629403830::1730254127::0::1::::<><>::res://Scripts/Menu_Scripts/Main_Menu_Script.gd<>uid://ps2w6o2mwdtk::::res://Scences/Menu_Scences/Player_Settings/Options.tscn
+::res://Scences/Menu_Scences/::1731114765
+main_menu.tscn::PackedScene::5270251163629403830::1731114765::0::1::::<><>::res://Scripts/Menu_Scripts/Main_Menu_Script.gd<>uid://ps2w6o2mwdtk::::res://Scences/Menu_Scences/Player_Settings/Options.tscn
 ::res://Scences/Menu_Scences/Player_Settings/::1729466343
 audio_slider_setting.tscn::PackedScene::1379132954979579458::1729148241::0::1::::<><>::res://Scripts/Audio_Slider_Setting.gd
 FPSOptions.tscn::PackedScene::5244555842433044575::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/FPS_Options.gd
@@ -229,17 +217,34 @@ Options.tscn::PackedScene::1091671751508941548::1729155127::0::1::::<><>::res://
 QualityOptions.tscn::PackedScene::8209156252994123474::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/QualityOptions.gd
 settings.tscn::PackedScene::2364988200719466293::1729466343::0::1::::<><>::uid://c7pq7nj2gnfiu::::res://Scences/Menu_Scences/Player_Settings/hotkey.tscn<>uid://twceaywxwjne::::res://Scences/Menu_Scences/Player_Settings/audio_slider_setting.tscn<>uid://dmsep4a3vnejk::::res://Scences/Menu_Scences/Player_Settings/Window Options.tscn<>uid://cgyrclf04v5xb::::res://Scences/Menu_Scences/Player_Settings/FPSOptions.tscn<>uid://do7tusmdnebws::::res://Scences/Menu_Scences/Player_Settings/QualityOptions.tscn
 Window Options.tscn::PackedScene::8038958153666332036::1729148241::0::1::::<><>::res://Scripts/Menu_Scripts/Window Options.gd
-::res://Scripts/::1731015675
+::res://Scripts/::1731114765
 Audio_Slider_Setting.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
 Background.gd::GDScript::-1::1729670160::0::1::::<>Node<>::
-Demon_Mob_Reaper.gd::GDScript::-1::1730963553::0::1::::reaper<>CharacterBody2D<>::
-Player.gd::GDScript::-1::1730855384::0::1::::Player<>CharacterBody2D<>::
+bigguy_Damage.gd::GDScript::-1::1731111694::0::1::::<>Area2D<>::
+Big_Guy_Death.gd::GDScript::-1::1731108344::0::1::::<>State<>::
+Big_Mob_Attack_State.gd::GDScript::-1::1731109675::0::1::::<>State<>::
+Big_Mob_D2.gd::GDScript::-1::1731110329::0::1::::<>CharacterBody2D<>::
+D1_Tileset.gd::GDScript::-1::1730855414::0::1::::<>TileMap<>::
+D2_TileSet.gd::GDScript::-1::1730855324::0::1::::<>TileMap<>::
+Demon_Mob_Reaper.gd::GDScript::-1::1731114644::0::1::::reaper<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1731113017::0::1::::Player<>CharacterBody2D<>::
+reaper_damage.gd::GDScript::-1::1731111674::0::1::::<>Area2D<>::
 Reaper_State_Search_D2.gd::GDScript::-1::1731015675::0::1::::<>State<>::
 Skeleton.gd::GDScript::-1::1730884572::0::1::::skeli<>CharacterBody2D<>::
-States_Reaper_Controlling.gd::GDScript::-1::1730965934::0::1::::<>State<>::
+Skeleton.tscn::PackedScene::7485927605257746067::1731114765::0::1::::<><>::res://Scripts/Skeleton.gd<>uid://c1qne1kdep8q2::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_attack_sheet.png<>uid://cpm54xgf2anjv::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_hurt_sheet.png<>uid://k4cqnav0p0g3::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_idle_sheet.png<>uid://dgix4a7um1co4::::res://Assests/Undead Sprite Pack/Undead Sprite Pack/SHEETS/undead_walk_sheet.png<>uid://hcmmpsxjruab::::res://State_Machine/State_Scences/State_Machine.tscn<>res://Scripts/State_Skeleton_D2.gd<>res://Scripts/States_Skeleton_RunAway.gd<>res://Scripts/State_Skeleton_Attack.gd<>res://Scripts/State_Skeleton_RunAt.gd<>uid://dow8qxp87iqb8::::res://Assests/Tree_of_Glory-Sheet.png<>res://Scripts/Skelton_attack.gd
+Skelton_attack.gd::GDScript::-1::1731112804::0::1::::<>Area2D<>::
+States_Reaper_Controlling.gd::GDScript::-1::1731112080::0::1::::<>State<>::
+States_Skeleton_RunAway.gd::GDScript::-1::1729926641::0::1::::<>State<>::
+State_Attack2_BigGuy.gd::GDScript::-1::1731108941::0::1::::<>State<>::
 State_Player_Attack.gd::GDScript::-1::1729670160::0::1::::<>State<>::
 State_Player_wait.gd::GDScript::-1::1729670160::0::1::::<>State<>::
 State_Reaper_Summon.gd::GDScript::-1::1730879096::0::1::::<>State<>::
+State_Relax_BigGuy.gd::GDScript::-1::1731108941::0::1::::<>State<>::
+State_Search_d2.gd::GDScript::-1::1731110476::0::1::::<>State<>::
+State_Skeleton_Attack.gd::GDScript::-1::1731112026::0::1::::<>State<>::
+State_Skeleton_D2.gd::GDScript::-1::1729926531::0::1::::<>State<>::
+State_Skeleton_RunAt.gd::GDScript::-1::1730880970::0::1::::<>State<>::
+State_Summon_Big.gd::GDScript::-1::1731110400::0::1::::<>State<>::
 ::res://Scripts/Menu_Scripts/::1729317119
 FPS_Options.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
 hotkey.gd::GDScript::-1::1729317119::0::1::::Rebind_Button<>Control<>::
@@ -247,13 +252,13 @@ Main_Menu_Script.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
 Options.gd::GDScript::-1::1729148241::0::1::::setting<>Control<>::
 QualityOptions.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
 Window Options.gd::GDScript::-1::1729148241::0::1::::<>Control<>::
-::res://State_Machine/::1731105610
+::res://State_Machine/::1731109675
 Enemy_State_Class.gd::GDScript::-1::1729644260::0::1::::State_AI<>Node<>::
 State_Class.gd::GDScript::-1::1731017562::0::1::::State<>Node<>::
-State_Machine.gd::GDScript::-1::1731105610::0::1::::<>Node<>::
+State_Machine.gd::GDScript::-1::1731109675::0::1::::<>Node<>::
 ::res://State_Machine/AI_Mob/::1729644075
-::res://State_Machine/AI_Mob/Canine_States/::1731108192
-State_Reaper_Attack.gd::GDScript::-1::1731108192::0::1::::<>State<>::
+::res://State_Machine/AI_Mob/Canine_States/::1731109950
+State_Reaper_Attack.gd::GDScript::-1::1731109950::0::1::::<>State<>::
 State_Reaper_D1.gd::GDScript::-1::1729673015::0::1::::<>State<>::
 State_Reaper_D2.gd::GDScript::-1::1731017773::0::1::::<>State<>::
 State_Reaper_RunAt.gd::GDScript::-1::1729670161::0::1::::<>State<>::

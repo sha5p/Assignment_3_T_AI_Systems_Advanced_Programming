@@ -9,7 +9,7 @@ class_name Player
 @onready var attack_state_machine_2 = $Attack_StateMachine2
 var player
 
-
+var health=5
 
 
 
@@ -50,3 +50,12 @@ func _process(delta: float) -> void:
 
 func Player():
 	pass
+
+
+func _on_area_2d_area_entered(area):
+	print(area, "DAMAGE TAKEN")
+	if area.has_method("Damage"):
+		if health==0:
+			print("death")
+		else:
+			health=health-1
