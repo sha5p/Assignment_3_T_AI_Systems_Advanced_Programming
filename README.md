@@ -170,7 +170,51 @@ func process_physics(_delta: float) -> State:
 		return SearchState
 	return null
 ```
-Calling diffrent signal functions these were than connected to to the skeleton in its state machine script and then would be controled based off the informaiton
+Calling diffrent signal functions these were than connected to to the skeleton in its state machine script and then would be controled based off the informaiton instead of using signals the skeletons could have been a child of the main repeaer node. However this decreases flexiblity and functionalty as it would require more dependecys such as specific refrences to the mob rather than using univesal indicators such as groups would could be incoprated to other mobs much easier if required. 
+
+The skeleton sending signals to the reaper as follows 
+```
+	if ray_1.is_colliding() or ray_2.is_colliding():
+
+		if ray_1.is_colliding():
+
+			emit_signal("colliding",self) 	
+		else:
+
+			emit_signal("colliding",self) 	
+	if !ray_1.is_colliding() and !ray_2.is_colliding():
+			emit_signal("Notcolliding",self) 	
+```
+
+Informing the reaper if its colliding or not and with this information lets it do the above which signals are then connected to the mobs states.
+```
+r z=true
+func enter():
+	var first_node = nodes_in_group[0]
+	if z:
+		first_node.connect("insturction_2", Callable(self, "state_func"))
+		z=false
+	animation_name = "Run"
+	animated_sprite_2d.play("Run")
+func process_physics(_delta: float) -> State:
+	var players = get_tree().get_nodes_in_group("player")
+	var dir = Vector2(players[0].position.x - parent.global_position.x,0)
+	dir=dir.normalized()
+	parent.velocity.x= dir.x*10
+	parent.move_and_slide()
+	if Global.current_dimension == "Dimension2":
+		return null
+	if stateControl == "attack":
+		stateControl=""
+		return attack
+	return null
+```
+Unlike the reaper who doesnt need to fly this mob will if the reaper commands run at the direction of the player. Then in all scripts as shown above values are returned when the signal connected to it results an emmition. However this only happens if the value in the signal that the reaper returns is itself. What this means is that the mobs are controlled indivdualy increasing the immersion of the user by adding varity for the player. 
+
+Once these mobs have been killed if the dimension is still in 1 than the reaper will go into an attack phase in which it will find the players location and then telport to him to attack. This attack pattern controled through pathfinding and collisions to return an attack state. This attack state will countiue until the player has died the reaper is killed or the dimension is changed. 
+
+If the dimension is changed the reaper will spawn a diffrent mob while attacking. This is because the mob spawned is not controlled by the reaper which has the following state machine. 
+
 
 ##### Big Guy/Mage
 #### Main Necromancer AI State Machine 
