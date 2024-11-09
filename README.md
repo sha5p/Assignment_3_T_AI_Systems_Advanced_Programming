@@ -143,7 +143,34 @@ Rather than using a customized pathfinding system using godot prebuiilt function
 Then along with movment there were two diffrent mobs that could be summoned that were shown in the planning above which in include a big mob and a skeltons.
 
 ##### Skelton Mob and Reaper Control
+```
+extends State
+signal insturction(state)
+signal insturction_2(state)
+signal Runat(state)
+func enter() ->void:
+	var nodes_in_group = get_tree().get_nodes_in_group("skeli")
+	for node in nodes_in_group:
+		node.connect("colliding", Callable(self, "state_func"))
+		node.connect("Notcolliding", Callable(self, "RunAt_from_attack"))
+```
 
+First diffrent signals were made and connected for the reaper to understand the skeltons situation and control the states of the skeleton. Then depending on this information it would send signals informating the skeleton what to do. 
+```  
+func process_physics(_delta: float) -> State:
+	var nodes_in_group = get_tree().get_nodes_in_group("skeli")
+	for node in nodes_in_group:
+		if node.position == player.position and command:
+			command=false
+			Sig_Attack()
+		elif node.position != player.position and command:
+			command=false
+			Sig_RunAt()
+	if Global.skeli==0:
+		return SearchState
+	return null
+```
+Calling diffrent signal functions these were than connected to to the skeleton in its state machine script and then would be controled based off the informaiton
 
 ##### Big Guy/Mage
 #### Main Necromancer AI State Machine 
