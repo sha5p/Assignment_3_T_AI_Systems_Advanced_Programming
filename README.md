@@ -215,8 +215,11 @@ Once these mobs have been killed if the dimension is still in 1 than the reaper 
 
 If the dimension is changed the reaper will spawn a diffrent mob while attacking. This is because the mob spawned is not controlled by the reaper which has the following state machine. 
 
-
 ##### Big Guy/Mage
+A majority of this mob runs off timers and randomizes creating a unqiue and diffrent mob. This mob was designed to be very diffrent to how the other mobs run for instance the mob cannot be killed by the player instead they can only die after the lifetime or the 'timer' has run out what 
+
+
+
 #### Main Necromancer AI State Machine 
 How hirecy based state machine is used from the player and they talked to allow for information 
 #### Signals via state machine 
