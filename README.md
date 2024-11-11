@@ -135,7 +135,10 @@ if child.has_method("tree"):
 ```
 
 Looping through and adding those to first child states with the tree function present to look lower in the hierarchy and add those with ‘States’ as a state. 
+
 ![image](https://github.com/user-attachments/assets/bdc59c03-03fa-4089-94d2-92a4477651fd)
+
+
 ![image](https://github.com/user-attachments/assets/9b284f9c-c743-466b-820b-813dfcc09dbe)![image](https://github.com/user-attachments/assets/c87a7ce4-cb6a-48da-be32-47b2f6d1e32e)
 
 #### Path Finding
