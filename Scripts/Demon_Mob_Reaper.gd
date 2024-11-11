@@ -12,3 +12,4 @@ func _physics_process(delta: float) ->void:
 	state_machine.process_physics(delta)
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+#pass values for state machine

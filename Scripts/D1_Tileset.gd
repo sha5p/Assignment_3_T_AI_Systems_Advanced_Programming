@@ -5,3 +5,4 @@ func _physics_process(_delta: float) ->void:
 		tile_map.visible=true
 	elif Global.current_dimension == "Dimension2":
 		tile_map.visible=false
+#just the tileset code

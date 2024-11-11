@@ -18,3 +18,4 @@ func _process(_delta: float) -> void:
 
 func _on_death_timeout():
 	parent.queue_free()
+#Die on timer end

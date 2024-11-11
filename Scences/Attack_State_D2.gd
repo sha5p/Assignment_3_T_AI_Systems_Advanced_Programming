@@ -8,3 +8,4 @@ func process_physics(_delta: float) -> State:
 	return null
 func _process(_delta: float) -> void:
 	pass
+#pass all values dont need

@@ -8,3 +8,4 @@ func _physics_process(_delta: float) ->void:
 	elif Global.current_dimension == "Dimension1":
 		tile_map.visible=false
 		
+#more tilesets change

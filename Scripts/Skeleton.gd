@@ -37,7 +37,7 @@ func faceAt():
 	else:
 		animations.flip_h = true
 
-
+#movment attack functions
 func _on_area_2d_area_entered(_area):
 	animations.play("Hit")
 	if health!=0:

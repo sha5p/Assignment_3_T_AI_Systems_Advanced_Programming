@@ -9,7 +9,7 @@ extends State
 @onready var timer = $"../../../Timer"
 @onready var summon = $"../../../Summon"
 
-
+#movment attack functions
 var z:bool = false
 var AttaclState:bool=false
 var speed = 100

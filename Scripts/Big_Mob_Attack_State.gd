@@ -10,7 +10,7 @@ var death:bool=false
 @export var Relax_State:State
 var attack=false
 @onready var attack_finished = $"../../Attack finished"
-
+#Varity of state machines
 
 func enter() ->void:
 	attack_finished.start()

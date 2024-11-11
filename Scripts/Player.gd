@@ -11,7 +11,7 @@ var player
 
 var health=5
 
-
+#Pass states
 
 func _ready():
 	state_machine.init(self, animations,player)
@@ -56,7 +56,7 @@ func _on_area_2d_area_entered(area):
 	print(area, "DAMAGE TAKEN")
 	if area.has_method("Damage"):
 		if health==0:
-			print("death")
+			get_tree().change_scene_to_file("res://Death.tscn")
 		else:
 			health=health-1
 

@@ -5,6 +5,8 @@ signal Runat(state)
 @export var D2:State
 @export var SearchState:State
 var command=true
+
+#Creates signaling for attacks 
 func enter() ->void:
 	var nodes_in_group = get_tree().get_nodes_in_group("skeli")
 	for node in nodes_in_group:
