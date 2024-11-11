@@ -118,7 +118,7 @@ And what the player looks like visually to the user.
 
 This could have also been used as a state machine but as this information is used throughout the script an autoloader seemed more preferable. 
 
-## Environment  
+#### Environment  
 Additionally, the use of the enum operating individually lets it easily communicate with environment scripts which then change the dimension depending on the information. Immersing the user and letting them know to expect and different outcome because of the dimension change. 
 |Diemension 1|Dimension 2|
 |:-----|:----|
