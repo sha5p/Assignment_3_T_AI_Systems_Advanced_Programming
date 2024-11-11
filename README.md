@@ -6,11 +6,12 @@
 
 |State Machines|State Machine Design|State Machine Ideas|Flow Chart|
 |:-----|:----|:----|:----|
-|Canine|![image](https://github.com/user-attachments/assets/2e655cce-5732-4947-8896-bb208d8fc01d)|A simple dog that will be the player's companion	|![image](https://github.com/user-attachments/assets/4d174b96-df33-4e61-95f7-28afc4a7ada3)|
-|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880)|Spawns other enemies controlling some of the enemies it spawns while others are independent than having different states such as attack search and retreat. |![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
-|Skele|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|A mob that is reliant on the reaper and will only switch states when the reaper commands it.|Above|
+|Canine|![image](https://github.com/user-attachments/assets/2e655cce-5732-4947-8896-bb208d8fc01d)|A simple dog that will be the player's companion|![image](https://github.com/user-attachments/assets/4d174b96-df33-4e61-95f7-28afc4a7ada3)|
+|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880) [FullSize](https://drive.google.com/file/d/1xt8LRz3Qd71guFAARDDSh-HFdyelsfbL/view?usp=sharing)|Spawns other enemies controlling some of the enemies it spawns while others are independent than having different states such as attack search and retreat. |![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
+|skeleton|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|A mob that is reliant on the reaper and will only switch states when the reaper commands it.|![image](https://github.com/user-attachments/assets/7f5b1c4d-0ccf-4b2f-8b05-299a33e38f08)|
 |Big Guy||Big mob that is independent and will have a variety of unique functions not seen often in mobs. Though it still must be spawned by the reaper its actions are not defined by it|Above|
-|Player||This player should be intended to contain a unique design making the base gameplay of the game reliant on its states. This main focus is dimensioned in which the main boss's decisions are changed by the player's current dimension.|
+|Player|![image](https://github.com/user-attachments/assets/708d1d0e-8860-4504-b027-c170609ea9ce)![image](https://github.com/user-attachments/assets/f973550a-71b8-4ec3-8b8a-2b3f7dbd20fc)
+|This player should be intended to contain a unique design making the base gameplay of the game reliant on its states. This main focus is dimensioned in which the main boss's decisions are changed by the player's current dimension.|![image](https://github.com/user-attachments/assets/23be733b-b924-43e8-8ea1-d8518f6d6b1f)|
 
 ### **Concept**  
 For this assignment to execute a powerful State Machine a game that has this in focus was designed. This means that the core ability of the player is to change ‘states’ or dimensions. To do this AI will be designed to change states using a ‘state machine’ with decision tree properties for dimension handling. 
