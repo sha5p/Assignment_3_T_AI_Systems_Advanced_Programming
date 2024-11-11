@@ -339,3 +339,9 @@ itch.io. (2024). Blood Demons. [online] Available at: https://immortal-burrito.i
 
 ‌
 itch.io. (2024). Undead Sprite Pack. [online] Available at: https://finalgatestudios.itch.io/undead-sprite-pack [Accessed 1 Nov. 2024].
+
+oOsongOo (2024). background music | Royalty-free Music. [online] Pixabay.com. Available at: https://pixabay.com/sound-effects/background-music-224633/ [Accessed 11 Nov. 2024].
+
+‌Pixabay (2023). lift music by kk | Royalty-free Music. [online] Pixabay.com. Available at: https://pixabay.com/sound-effects/lift-music-by-kk-30497/ [Accessed 11 Nov. 2024].
+
+‌
