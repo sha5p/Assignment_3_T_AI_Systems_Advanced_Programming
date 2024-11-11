@@ -86,8 +86,10 @@ By using this method and calling the current state enter and exit. These functio
 The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. So for player two diffrent state machine scenes were connected/instansiated to the player as shown below.
 
 ![image](https://github.com/user-attachments/assets/d2e5d06a-dca5-42b0-8551-c850d6ca08d5)
+![image](https://github.com/user-attachments/assets/012da2ec-dc78-4ee7-bc03-3600d5e26fa5)
 
-Orginally a more customize state machine was made to run two diffrent states at the same time allowing the return of two diffrent classes. However the method proved iniffcent supporting a [modulated](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-machine-modulated) State machine initally designed and so was used throughout. This let two diffrent things occur at the same time in the player with the use of hirecy to insure the correct animation. 
+Originally a more customised state machine was made to run two different states at the same time allowing the return of two different classes. However, the method proved inefficient supporting a [modulated](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-machine-modulated) State machine initially designed and so was used throughout. This lets two different things occur at the same time in the player with the use of hierarchy to ensure the correct animation. The other machine not directly attached to the player being script-based as an autoloader functioning as shown below
+
 
 The script based state machine running off the following code.
 ```
@@ -105,19 +107,25 @@ func change()->void:
 		Dimension.Dimension2:
 			current_dimension="Dimension2"
 ```
-By running this script through an autoloader it allows the dimension to be controlled independent to the scene. However the player can still influence the current state that the player is in. This means that adding another dimension can just be implmented via adding simply enuming the information can be performed and other information can be changed overtime this is because changing or adding a dimension does not cause dependcys. This could have been an addtionaal state to the player however upon testing storing the infromation in this state is more compact and controlling inputs for the user would have less dependencys.
+Running a script-based state machine requires an enum that can easily be switched and through an autoloader allows the dimension to be controlled independently of the scene. However, this machine still influences the state of the player. Depending on input the dimension is changed and the functionality of the player along with it. This includes the ability of the player to jump
+```
+if Input.is_action_just_pressed("Up") and parent.is_on_floor() and Global.current_dimension == "Dimension1":
+		parent.velocity.y = JUMP_VELOCITY
+```
+And what the player looks like visually to the user. 
+![image](https://github.com/user-attachments/assets/59107f11-4732-439a-9ec9-afc20d989d28)
+![image](https://github.com/user-attachments/assets/901d504f-1175-4b84-b213-9b502f43ff15)
 
-### Invorment 
-Addtionally the use of the enum operating indivdually lets it easily comminicate with enviorment scripts which than change the dimension depending on the information. Immersing the user and letting them know to expect and diffrent outcome because of the dimension change
+This could have also been used as a state machine but as this information is used throughout the script an autoloader seemed more preferable. 
 
+## Environment  
+Additionally, the use of the enum operating individually lets it easily communicate with environment scripts which then change the dimension depending on the information. Immersing the user and letting them know to expect and different outcome because of the dimension change. 
 |Diemension 1|Dimension 2|
 |:-----|:----|
 |![image](https://github.com/user-attachments/assets/25ea02c1-b269-40f9-bea5-3db0151ed448)|![image](https://github.com/user-attachments/assets/682dd714-b701-4f84-b877-78caf640de21)|
 
-The would also change the player based on the dimension in one a 'lighter' stickman which can jump around and in the other a more beefed up mob which though cannot jump has less obsticles and enemys to fight.
 ### State Machine Enemy AI
-To set up the state machines of the main mob or repeaer mob some system needs to be implmented for the current dimension that is being run. The two ways that this can be done is like the player running off two diffrent state machines depending on the dimension or adding addtional hirecy. Because unlike the player running diffrent states at the same time would simply cause bug like playablity and so the use of hirecy state machines was used. This state machine is the same as others except it goes through a hirecy if the function tree() is present. 
-
+To set up the state machines of the reaper mob a system for the current dimension needed to be made. The two ways that this could have been done are through multiple state machines or a decision tree method requiring a dimension for the next operation. Unlike the player's ability to run different states at the same time, testing suggested that this method was more bug-prone as it did not ensure a singular state. And so changes to the [state machine](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-machine-modulated) were made.
 ```
 if child.has_method("tree"):
 			for sub_child in child.get_children():
@@ -126,22 +134,29 @@ if child.has_method("tree"):
 				sub_child.player=player
 ```
 
-Looping through and adding those to the hirecy as shown. 
+Looping through and adding those to first child states with the tree function present to look lower in the hierarchy and add those with ‘States’ as a state. 
 ![image](https://github.com/user-attachments/assets/bdc59c03-03fa-4089-94d2-92a4477651fd)
+![image](https://github.com/user-attachments/assets/9b284f9c-c743-466b-820b-813dfcc09dbe)![image](https://github.com/user-attachments/assets/c87a7ce4-cb6a-48da-be32-47b2f6d1e32e)
 
-This mob then incoprates path finding by using a navigation agent 2D. Which was done for complex movment for future additions to the game such as obstucles. By getting a refrence to the player and using this inbuilt system the path could be made. 
+#### Path Finding
+This mob then incorporates pathfinding by using a navigation agent 2D to locate the player. Which allows for smooth movement to go to the player even if obstacles are present. By getting a reference to the player and using this inbuilt system the path to the player could be made. 
 ```
+func process_physics(_delta: float) -> State:
+	var dir =parent.to_local(nav_agent.get_next_path_position()).normalized()
+	parent.velocity=dir*speed
+	parent.move_and_slide()
 func _makepath() ->void:
 	nav_agent.target_position=player.global_position
 func _on_timer_timeout() ->void:
 	_makepath()
 ```
 
-Rather than using a customized pathfinding system using godot prebuiilt function allowed for the same functionallty in the short timespawn given for the assesment. 
+Rather than using a customized pathfinding system using godot prebuilt function allowed for the same functionality in the short timespan given for the assessment. Additionally, this navigation means obstacles and other forms of blockage against the mob could be added without damaging the AI's ability to locate the player 
 
-Then along with movment there were two diffrent mobs that could be summoned that were shown in the planning above which in include a big mob and a skeltons.
+Then if the reaper got close enough to the player depending on the dimension two different mobs could be summoned. 
 
-##### Skelton Mob and Reaper Control
+##### Skeleton Mob and Reaper Control
+For the first mob, the skeleton all decisions of its actions were made by the reaper the only thing the skeleton did was inform the reaper of its current posistion and if ray casts were colliding. 
 ```
 extends State
 signal insturction(state)
