@@ -81,14 +81,13 @@ func process_physics(delta: float) -> void:
 ```
 By using this method and calling the current state enter and exit. These functions as shown in the above state class do not return the State being called once every time allowing for a similar function to the ready function happening when the state is exited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
 
-### Player State Machine and Script
+### Player State Machine and Script 
 
-The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. 
+The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. So for player two diffrent state machine scenes were connected/instansiated to the player as shown below.
 
-Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. These include that of the attack state machine and the movment state machine 
 ![image](https://github.com/user-attachments/assets/d2e5d06a-dca5-42b0-8551-c850d6ca08d5)
 
-both in which operating indivdually the attack state machine animations being run in a higher hirecy so animations dont overlap. It was designed using multiple state machines as it allowed for two things two occur on the player at once that being attacking and movment. Alternativly both the attack and state machine could have run under the same state machine however controlling what is occuring would of had an overlap of functions such as movment code in an attack script. 
+Orginally a more customize state machine was made to run two diffrent states at the same time allowing the return of two diffrent classes. However the method proved iniffcent supporting a [modulated](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-machine-modulated) State machine initally designed and so was used throughout. This let two diffrent things occur at the same time in the player with the use of hirecy to insure the correct animation. 
 
 The script based state machine running off the following code.
 ```
