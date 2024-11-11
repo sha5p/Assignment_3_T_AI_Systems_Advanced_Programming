@@ -2,19 +2,18 @@
 ## **Documentation State Machine** 
 
 
-## **AI State Machine Planning**  
+## **Planning & Design the Game**  
 
 |State Machines|State Machine Design|State Machine Ideas|Flow Chart|
 |:-----|:----|:----|:----|
-|Canine|![image](https://github.com/user-attachments/assets/2e655cce-5732-4947-8896-bb208d8fc01d)|A simple dog that will be the players companion|![image](https://github.com/user-attachments/assets/4d174b96-df33-4e61-95f7-28afc4a7ada3)|
-|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880)|Spawns other Enimies controlling some of the enimies it spawns. Than having diffrent attack phases throughout the game|![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
-|Skele|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|This mob is only able to control its status effects decision making is left to the reaper |Above|
-|Big Guy||Big mob guy that necro cannot control|Above|
-|Player||Has a varity of states and applications that cannot be applied in other dimensions|
+|Canine|![image](https://github.com/user-attachments/assets/2e655cce-5732-4947-8896-bb208d8fc01d)|A simple dog that will be the player's companion	|![image](https://github.com/user-attachments/assets/4d174b96-df33-4e61-95f7-28afc4a7ada3)|
+|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880)|Spawns other enemies controlling some of the enemies it spawns while others are independent than having different states such as attack search and retreat. |![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
+|Skele|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|A mob that is reliant on the reaper and will only switch states when the reaper commands it.|Above|
+|Big Guy||Big mob that is independent and will have a variety of unique functions not seen often in mobs. Though it still must be spawned by the reaper its actions are not defined by it|Above|
+|Player||This player should be intended to contain a unique design making the base gameplay of the game reliant on its states. This main focus is dimensioned in which the main boss's decisions are changed by the player's current dimension.|
 
-For this assigment to excute a powerful State Machine multiple diffrent types where used throughout the game including in he AI, Player and the terrain. For the player was designed around a simple node based state machine along with the terrian that could help provide information to produce an intellgent AI. 
-
-This system would work by childing nodes to the main script and refrencing them in the main code f
+### **Concept**  
+For this assignment to execute a powerful State Machine a game that has this in focus was designed. This means that the core ability of the player is to change ‘states’ or dimensions. To do this AI will be designed to change states using a ‘state machine’ with decision tree properties for dimension handling. 
 
 ### State machine 
 A state machine allows for one singular action to be performed and all other actions ignored and bypassed by the parent node. This allows for  easier debugging throughout the game by improving readablity which for the devloper makes creating specfically more complex AI, Players and transisation between animation and other information. This assigment uses state machines to influence the enviorment and enemies via the information the player provides. These enemies will than not only be influenced by the player but by other enemies adding more complextiy and varity for the user. 
