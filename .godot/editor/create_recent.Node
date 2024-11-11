@@ -1,5 +1,6 @@
-Timer
+AudioStreamPlayer2D
 Label
+Timer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
@@ -11,4 +12,3 @@ AnimationPlayer
 RayCast2D
 CharacterBody2D
 TileMap
-NavigationAgent2D

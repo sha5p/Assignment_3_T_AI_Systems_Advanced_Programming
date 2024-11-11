@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1m0qtt0afqvx"]
+[gd_scene load_steps=3 format=3 uid="uid://b1m0qtt0afqvx"]
 
 [ext_resource type="Script" path="res://Death.gd" id="1_ekygd"]
+[ext_resource type="AudioStream" uid="uid://dfmyua12cwsjw" path="res://Audio/male-death-sound-128357.mp3" id="2_1c4dg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,5 +25,11 @@ text = "You died"
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1c4dg")
+autoplay = true
+stream_paused = true
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

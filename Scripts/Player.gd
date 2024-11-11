@@ -59,3 +59,7 @@ func _on_area_2d_area_entered(area):
 			print("death")
 		else:
 			health=health-1
+
+
+func _on_audio_stream_player_2d_finished():
+	$AudioStreamPlayer2D.play()

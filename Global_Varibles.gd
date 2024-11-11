@@ -8,7 +8,6 @@ func _ready():
 	change()
 func change_dimension(new_dimension):
 	current_dimensions = new_dimension
-	print(current_dimension,"This is current dm6")
 	change()
 func change()->void:
 	match current_dimensions:
