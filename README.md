@@ -309,6 +309,8 @@ Lastly, the final user asked for indications that the reaper was controlling the
 
 
 
+
+
 ### Evaluation on Game
 
 Unlike other games before this one had a heavy focus on State Machines. In future, I wish to polish games, improving upon basic features while completing all that was first planned such as the companion mob that could not be done. However, generally, it seemed that the user enjoyed the game as shown in the graph here and through the user's responses.
@@ -320,3 +322,19 @@ Unlike other games before this one had a heavy focus on State Machines. In futur
 
 
 ## Bibliography 
+Alex (2016). How to make an sprite bounce within an object? [online] Stack Overflow. Available at: https://stackoverflow.com/questions/38216878/how-to-make-an-sprite-bounce-within-an-object.[Accessed 9 Nov. 2024].
+
+itch.io. (2022). Animation Dark Character. [online] Available at: https://darkknight17.itch.io/eee [Accessed 23 Nov. 2024].
+
+itch.io. (2024). Free Magic Summons Pack. [online] Available at: https://srzolda.itch.io/magic-summons [Accessed 26 Oct. 2024].
+
+itch.io. (n.d.). Free Horizontal Game Backgrounds by Free Game Assets (GUI, Sprite, Tilesets). [online] Available at: https://free-game-assets.itch.io/free-horizontal-game-backgrounds.[Accessed 25 Nov. 2024].
+
+‌
+‌itch.io. (n.d.). Boss: Undead Executioner [FREE] by Kronovi-. [online] Available at: https://darkpixel-kronovi.itch.io/undead-executioner.[Accessed 25 Nov. 2024].
+
+‌
+itch.io. (2024). Blood Demons. [online] Available at: https://immortal-burrito.itch.io/blood-demons [Accessed 8 Nov. 2024].
+
+‌
+itch.io. (2024). Undead Sprite Pack. [online] Available at: https://finalgatestudios.itch.io/undead-sprite-pack [Accessed 1 Nov. 2024].
