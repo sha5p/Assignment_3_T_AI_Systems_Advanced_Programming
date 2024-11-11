@@ -79,10 +79,11 @@ func process_physics(delta: float) -> void:
 	if new_state:
 		change_state(new_state)
 ```
-By using this method and calling the current state enter and exit. These functions as shown in the above state class do not return the State being called once every time allowing for a similar function to the ready function happening when the state is excited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
+By using this method and calling the current state enter and exit. These functions as shown in the above state class do not return the State being called once every time allowing for a similar function to the ready function happening when the state is exited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
 
 ### Player State Machine and Script
-The player runs of 3 diffrent state machines which all control diffrent aspects of the game and inturn affect the user. The include a state machine for attacks, movment and dimension changing. Both the movment and attacks run off the state machine and class above while the dimension changer uses a state machine script. 
+
+The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. 
 
 Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. These include that of the attack state machine and the movment state machine 
 ![image](https://github.com/user-attachments/assets/d2e5d06a-dca5-42b0-8551-c850d6ca08d5)
