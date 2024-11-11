@@ -7,7 +7,7 @@
 |State Machines|State Machine Design|State Machine Ideas|Flow Chart|
 |:-----|:----|:----|:----|
 |Canine|![image](https://github.com/user-attachments/assets/2e655cce-5732-4947-8896-bb208d8fc01d)|A simple dog that will be the player's companion|![image](https://github.com/user-attachments/assets/4d174b96-df33-4e61-95f7-28afc4a7ada3)|
-|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880) [FullSize](https://drive.google.com/file/d/1xt8LRz3Qd71guFAARDDSh-HFdyelsfbL/view?usp=sharing)|Spawns other enemies controlling some of the enemies it spawns while others are independent than having different states such as attack search and retreat. |![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
+|Necromancer|![image](https://github.com/user-attachments/assets/04a0d844-a61d-4211-8863-d343530bb880) [FullSize](https://drive.google.com/file/d/1xt8LRz3Qd71guFAARDDSh-HFdyelsfbL/view?usp=sharing)|Spawns other enemies control some of the enemies it spawns while others are independent rather than having different states such as attack, search and retreat.|![image](https://github.com/user-attachments/assets/3c245f64-0f12-4a75-a803-3705446960c8)|
 |skeleton|![image](https://github.com/user-attachments/assets/2fb31969-cf18-42e0-91ac-ceccb39573d9)|A mob that is reliant on the reaper and will only switch states when the reaper commands it.|![image](https://github.com/user-attachments/assets/7f5b1c4d-0ccf-4b2f-8b05-299a33e38f08)|
 |Big Guy|![image](https://github.com/user-attachments/assets/9ce41ef9-db49-40db-8f58-a65e51ead873)|Big mob that is independent and will have a variety of unique functions not seen often in mobs. Though it still must be spawned by the reaper its actions are not defined by it|![image](https://github.com/user-attachments/assets/ba2a6c41-47fd-4a43-95b6-cf60230031f8)|
 |Player|![image](https://github.com/user-attachments/assets/708d1d0e-8860-4504-b027-c170609ea9ce)![image](https://github.com/user-attachments/assets/f973550a-71b8-4ec3-8b8a-2b3f7dbd20fc)|This player should be intended to contain a unique design making the base gameplay of the game reliant on its states. This main focus is dimensioned in which the main boss's decisions are changed by the player's current dimension.|![image](https://github.com/user-attachments/assets/23be733b-b924-43e8-8ea1-d8518f6d6b1f)|
@@ -16,7 +16,7 @@
 For this assignment to execute a powerful State Machine a game that has this in focus was designed. This means that the core ability of the player is to change ‘states’ or dimensions. To do this AI will be designed to change states using a ‘state machine’ with decision tree properties for dimension handling. 
 
 ## State machine 
-The State Machine designed for this assessment allows for a single action or script that extends the state to run ignoring other code in other scripts that return States. This design unlike the usual state machine means that scripts not in the current state can run if they don’t return a State value. Though the original type of state machine is powerful this design allows for more flexible code while maintaining the original functionality of a state machine. Allowing for an easier debugging process throughout the game by improving readability for the developer to design complex AI, player animations ect. 
+The State Machine designed for this assessment allows for a single action or script that extends the state to run ignoring other code in other scripts that return States. This design, unlike the usual state machine, means that scripts not in the current state can run if they don’t return a State value. Though the original type of state machine is powerful this design allows for more flexible code while maintaining the original functionality of a state machine. Allowing for an easier debugging process throughout the game by improving readability for the developer to design complex AI, player animations ect. 
 
 ### State Class
 ```
@@ -40,15 +40,16 @@ func process_input(_event: InputEvent) ->State:
 func process_frame(_delta: float) -> State:
 	return null
 ```
-A state class is what was used to be referenced in all state machines. Functions returning states are only useable if the current state is in use. As explained above this was done for more flexibility in the code and adding features that I want to be present at all times. However, this does not have a reference to any script because it is the base class instead a class is made to be referred to following this blueprint. These include a player, parent and animations. For all state machines, a reference to the parent is important as it allows for the top of the heresy to be controlled in a lower hierarchy node. However Important for the AI especially those that are summoned is a way to still reference the player as they cannot be initially made if not both present in the scene.
+A state class is what was used to be referenced in all state machines. Functions returning states are only useful if the current state is in use. As explained above this was done for more flexibility in the code and adding features that I want to be present at all times. However, this does not have a reference to any script because it is the base class instead a class is made to be referred to following this blueprint. These include a player, parent and animations. For all state machines, a reference to the parent is important as it allows for the top of the heresy to be controlled in a lower hierarchy node. However Important for the AI especially those that are summoned is a way to still reference the player as they cannot be initially made if not both present in the scene.
+
 
 
 ### State Machine modulated
-A state machine rather than being made for each script is made as a scene for moduablity as it allows for the reuse of code. 
+A state machine rather than being made for each script is made as a scene for the reuse of code. 
 
 ![image](https://github.com/user-attachments/assets/e5b5c700-ef26-455b-a073-a32e485210ff)
 
-For modublity the script needed to set refrences using exports and referencing these exports to assign states. 
+For modularity the script needed to set references using exports and referencing these exports to assign states. 
 ```
 extends Node
 @export var starting_state:State
@@ -67,7 +68,7 @@ func init(parent:CharacterBody2D, animations:AnimatedSprite2D,player: Node2D) ->
 				sub_child.player=player
 	change_state(starting_state) 	
 ```
-This method is what allowed for the reuse of code making it more time efficent but also decreased how flexible the code was and its ablity to target the specific scene. Then a system was made for returning states so that when a value is returned the state would change to the new state.
+This method is what allowed for the reuse of code making it more time efficient but also decreased how flexible the code was and its ability to target the specific scene. Then a system was made for returning states so that when a value is returned the state would change to the new state.
 ```
 func change_state(new_state: Node) -> void:
 	if current_state:
@@ -83,7 +84,7 @@ By using this method and calling the current state enter and exit. These functio
 
 ### Player State Machine and Script 
 
-The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. So for player two diffrent state machine scenes were connected/instansiated to the player as shown below.
+The player runs 3 different state machines which control different aspects of the player requiring these multiple states at the same time. They include a state machine for attacks, movement and dimension changing. Both the movement and attacks run off the modulated state machine and class while the dimension changer uses a state machine script. So for the player, two different state machine scenes were connected/instantiated to the player as shown below.
 
 ![image](https://github.com/user-attachments/assets/d2e5d06a-dca5-42b0-8551-c850d6ca08d5)
 ![image](https://github.com/user-attachments/assets/012da2ec-dc78-4ee7-bc03-3600d5e26fa5)
@@ -91,7 +92,7 @@ The player runs 3 different state machines which control different aspects of th
 Originally a more customised state machine was made to run two different states at the same time allowing the return of two different classes. However, the method proved inefficient supporting a [modulated](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-machine-modulated) State machine initially designed and so was used throughout. This lets two different things occur at the same time in the player with the use of hierarchy to ensure the correct animation. The other machine not directly attached to the player being script-based as an autoloader functioning as shown below
 
 
-The script based state machine running off the following code.
+The script-based state machine runs off the following code.
 ```
 enum Dimension { Dimension1, Dimension2 }
 var current_dimensions = Dimension.Dimension1
@@ -117,7 +118,7 @@ And what the player looks like visually to the user.
 ![image](https://github.com/user-attachments/assets/59107f11-4732-439a-9ec9-afc20d989d28)
 ![image](https://github.com/user-attachments/assets/901d504f-1175-4b84-b213-9b502f43ff15)
 
-This could have also been used as a state machine but as this information is used throughout the script an autoloader seemed more preferable. 
+This could have also been used as a state machine but as this information is used throughout the script an autoloader seemed preferable. 
 
 #### Environment  
 Additionally, the use of the enum operating individually lets it easily communicate with environment scripts which then change the dimension depending on the information. Immersing the user and letting them know to expect and different outcome because of the dimension change. 
