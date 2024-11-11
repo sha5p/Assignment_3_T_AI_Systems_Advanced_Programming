@@ -43,10 +43,12 @@ func process_frame(_delta: float) -> State:
 A state class is what was used to be referenced in all state machines. Functions returning states are only useable if the current state is in use. As explained above this was done for more flexibility in the code and adding features that I want to be present at all times. However, this does not have a reference to any script because it is the base class instead a class is made to be referred to following this blueprint. These include a player, parent and animations. For all state machines, a reference to the parent is important as it allows for the top of the heresy to be controlled in a lower hierarchy node. However Important for the AI especially those that are summoned is a way to still reference the player as they cannot be initially made if not both present in the scene.
 
 
-### State Machine
-A state machine rather than being made for each script is made as a scene for moduablity as it allows for the reuse of code. Making a majority of this script exports and referencing these exports to assign states. The states check if they extend the class created above and if so are assigned. The transition between the states also uses the exports as a reference for changing states. Though the state machines could have been more specifically designed for the specific parent it would be used for this design is more flexible considering the time constraint.
+### State Machine modulated
+A state machine rather than being made for each script is made as a scene for moduablity as it allows for the reuse of code. 
+
 ![image](https://github.com/user-attachments/assets/e5b5c700-ef26-455b-a073-a32e485210ff)
 
+For modublity the script needed to set refrences using exports and referencing these exports to assign states. 
 ```
 extends Node
 @export var starting_state:State
@@ -64,6 +66,9 @@ func init(parent:CharacterBody2D, animations:AnimatedSprite2D,player: Node2D) ->
 				sub_child.animations=animations
 				sub_child.player=player
 	change_state(starting_state) 	
+```
+This method is what allowed for the reuse of code making it more time efficent but also decreased how flexible the code was and its ablity to target the specific scene. Then a system was made for returning states so that when a value is returned the state would change to the new state.
+```
 func change_state(new_state: Node) -> void:
 	if current_state:
 		current_state.exit()
@@ -73,25 +78,10 @@ func process_physics(delta: float) -> void:
 	var new_state =current_state.process_physics(delta)
 	if new_state:
 		change_state(new_state)
-func process_input(event: InputEvent) ->void:
-	
-	#var z:String
-	#if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
-		#z="Move"
-	#if Input.is_action_just_pressed("Up"):
-		#z="Jump"
-	var new_state= current_state.process_input(event)
-	if new_state:
-		change_state(new_state)
-func process_frame(delta: float) ->void:
-	var new_state= current_state.process_frame(delta)
-	if new_state:
-		change_state(new_state)
 ```
+By using this method and calling the current state enter and exit. These functions as shown in the above state class do not return the State being called once every time allowing for a similar function to the ready function happening when the state is excited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
 
-
-
-#### Player State Machine and Script
+### Player State Machine and Script
 The player runs of 3 diffrent state machines which all control diffrent aspects of the game and inturn affect the user. The include a state machine for attacks, movment and dimension changing. Both the movment and attacks run off the state machine and class above while the dimension changer uses a state machine script. 
 
 Two diffrent state machines for the player were used as it allowed for multiple functions to run at the same time while still incoprating a state machine. Both of these were than connected to the player and initalised. These include that of the attack state machine and the movment state machine 
