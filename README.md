@@ -295,25 +295,26 @@ Taking this request from the user the combat system was improved by adding a can
 
 This was done by running the animation through a function that doesn't go through the -> States allowing it to bypass the current animation being played which is why damage taken is not a state in any other mob built upon this system. If given more time additional additions such as hit stop would have been added but time constraints only allowed for this issue to be partially addressed. 
 
-The second test user asked for the addition of indications when the reaper would attack next and so a radius was added to the reaper to show how far it could see. Again without time constraints, this could potentially appear using the on-exit function giving the player only a brief warning before an action takes place. 
+The second test user asked for the addition of indications when the reaper would attack next and so a radius was added to the reaper to show how far it could see. 
 
 ![image](https://github.com/user-attachments/assets/9ef2280d-de7e-4f8e-b41c-5ccb5b5fedd6)
 
 This addition also improved upon the combat like the first user asked for as well as solving the initial problem. 
 
-Lastly, the final user asked for indications that the reaper was controlling the skeleton mob and so the use of the same animation of 'rune-like' symbol was used when controlling the skeleton mob.
+Lastly, the final user asked for indications that the reaper was controlling the skeleton mob through symbols. 
 ![image](https://github.com/user-attachments/assets/d9b95ba8-b901-4808-b45c-41216aab25db)
 
 ![image](https://github.com/user-attachments/assets/6338cdc5-6a8f-4fb0-8255-a98a324eb394) 
 ![image](https://github.com/user-attachments/assets/d244083e-380c-433c-ba0c-a5f3d3d9add1)
 
-However, generally, it seemed that the user enjoyed the game as shown in the graph here and through the user's responses.
+
+
+### Evaluation on Game
+
+Unlike other games before this one had a heavy focus on State Machines. In future, I wish to polish games, improving upon basic features while completing all that was first planned such as the companion mob that could not be done. However, generally, it seemed that the user enjoyed the game as shown in the graph here and through the user's responses.
 
 ![image](https://github.com/user-attachments/assets/05c73990-2a35-44ca-8af6-e307b09fdcb0)
 
-### Evaluation  on Game
-
-Unlike other games before this one had a heavy focus on enemy AI and state machine design. This game uses a varity of state machines to perform specific functions including that of controlling other mobs, and complex enemy states, controlling the player and script-based state machines. If this assessment were to have been extended polishing on the state machines and taking full advantage of its function to develop more complex scripts would have been done on more of the mobs rather than just the reaper. In addition, adding polish such as a hit stop to the player to address feedback more thoroughly and making the dimension feature even more embedded into the game such as parkour routes that can only be taken in one dimension. 
 
 
 
