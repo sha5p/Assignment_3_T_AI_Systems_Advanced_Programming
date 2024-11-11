@@ -15,10 +15,10 @@
 ### **Concept**  
 For this assignment to execute a powerful State Machine a game that has this in focus was designed. This means that the core ability of the player is to change ‘states’ or dimensions. To do this AI will be designed to change states using a ‘state machine’ with decision tree properties for dimension handling. 
 
-### State machine 
-A state machine allows for one singular action to be performed and all other actions ignored and bypassed by the parent node. This allows for  easier debugging throughout the game by improving readablity which for the devloper makes creating specfically more complex AI, Players and transisation between animation and other information. This assigment uses state machines to influence the enviorment and enemies via the information the player provides. These enemies will than not only be influenced by the player but by other enemies adding more complextiy and varity for the user. 
+## State machine 
+The State Machine designed for this assessment allows for a single action or script that extends the state to run ignoring other code in other scripts that return States. This design unlike the usual state machine means that scripts not in the current state can run if they don’t return a State value. Though the original type of state machine is powerful this design allows for more flexible code while maintaining the original functionality of a state machine. Allowing for an easier debugging process throughout the game by improving readability for the developer to design complex AI, player animations ect. 
 
-#### State Class
+### State Class
 ```
 class_name State
 extends Node
@@ -40,11 +40,13 @@ func process_input(_event: InputEvent) ->State:
 func process_frame(_delta: float) -> State:
 	return null
 ```
-A state class is what defines all states if they extend the class the engine will run through and check assign values that are currently stated. The player is extended as this code is modulated for all ChracterBody2Ds this means that player does not have to been defined in the player but a refrence to it can be made in the enemy script. Next an animation node is added so that when each state is entered the assigned animation node will be played without constant defintion though this does not play if there is more than one animation defined for smaller state machines this system is used. 
+A state class is what was used to be referenced in all state machines. Functions returning states are only useable if the current state is in use. As explained above this was done for more flexibility in the code and adding features that I want to be present at all times. However, this does not have a reference to any script because it is the base class instead a class is made to be referred to following this blueprint. These include a player, parent and animations. For all state machines, a reference to the parent is important as it allows for the top of the heresy to be controlled in a lower hierarchy node. However Important for the AI especially those that are summoned is a way to still reference the player as they cannot be initially made if not both present in the scene.
 
-#### State Machine
+
+### State Machine
+A state machine rather than being made for each script is made as a scene for moduablity as it allows for the reuse of code. Making a majority of this script exports and referencing these exports to assign states. The states check if they extend the class created above and if so are assigned. The transition between the states also uses the exports as a reference for changing states. Though the state machines could have been more specifically designed for the specific parent it would be used for this design is more flexible considering the time constraint.
 ![image](https://github.com/user-attachments/assets/e5b5c700-ef26-455b-a073-a32e485210ff)
-A state machine rather than being made for each script is made as a scene as uses refrences to make it modulable over each scene. First exports are deefined as somthing that extends the state class so that only states can be made a refrence to. Then a varity of scripts are used to allow a smooth transisation between the states.
+
 ```
 extends Node
 @export var starting_state:State
@@ -296,3 +298,9 @@ However generally it seemed that the user enjoyed the game as shown in the grapt
 ### Evulation on Game
 
 Unlike other games before this one had a heavy focus on enemey AI and state machine design. This game using a varity of state machines to perform spercific functions including that of controling other mobs, complex enemy states, controling the player and script based state machines. If this assesment were to have been extended polishing on the state machines and taking full advantage of its function to devlop more complex scripts would have been used on more of the mobs rather than just the reaper. In addition adding polish such as a hit stop to the player so the user feels more impact as well as explore more into changing the enviorment and making the dimension feature even more imbended into the game such as parcore routes that can only be taken in one dimension. 
+
+
+
+
+
+### Biblogaphy 
