@@ -158,7 +158,7 @@ Rather than using a customized pathfinding system using godot prebuilt function 
 
 Then if the reaper got close enough to the player depending on the dimension two different mobs could be summoned. 
 
-##### Skeleton Mob and Reaper Control
+#### Skeleton Mob and Reaper Control
 For the first mob, the skeleton all decisions of its actions were made by the reaper the only thing the skeleton did was inform the reaper of its current posistion and if ray casts were colliding. 
 ```
 extends State
@@ -172,7 +172,7 @@ func enter() ->void:
 		node.connect("Notcolliding", Callable(self, "RunAt_from_attack"))
 ```
 
-First diffrent signals were made and connected for the reaper to understand the skeltons situation and control the states of the skeleton. Then depending on this information it would send signals informating the skeleton what to do. 
+First different signals were made and connected for the reaper to understand the skeleton's situation and control the states of the skeleton. Then depending on this information it would send signals informating the skeleton what to do. 
 ```  
 func process_physics(_delta: float) -> State:
 	var nodes_in_group = get_tree().get_nodes_in_group("skeli")
@@ -187,7 +187,7 @@ func process_physics(_delta: float) -> State:
 		return SearchState
 	return null
 ```
-Calling diffrent signal functions these were than connected to to the skeleton in its state machine script and then would be controled based off the informaiton instead of using signals the skeletons could have been a child of the main repeaer node. However this decreases flexiblity and functionalty as it would require more dependecys such as specific refrences to the mob rather than using univesal indicators such as groups would could be incoprated to other mobs much easier if required. 
+Different signals were then connected to the skeleton in its state machine script and then would be controlled based on the information. The reason the skeleton was not a direct child of the reaper was because this created a variety of movement issues in the skeleton while the reaper moved. Which was why signals were used instead though this decreases flexibility it decreases the amount of dependencies needed for the code. 
 
 The skeleton sending signals to the reaper as follows 
 ```
@@ -203,7 +203,9 @@ The skeleton sending signals to the reaper as follows
 			emit_signal("Notcolliding",self) 	
 ```
 
-Informing the reaper if its colliding or not and with this information lets it do the above which signals are then connected to the mobs states.
+Informing the reaper if it is colliding or not and with this information it gives those above commands such as Sig_Attack() to attack the player. 
+
+#### Skeleton pathfinding
 ```
 r z=true
 func enter():
@@ -226,15 +228,18 @@ func process_physics(_delta: float) -> State:
 		return attack
 	return null
 ```
-Unlike the reaper who doesnt need to fly this mob will if the reaper commands run at the direction of the player. Then in all scripts as shown above values are returned when the signal connected to it results an emmition. However this only happens if the value in the signal that the reaper returns is itself. What this means is that the mobs are controlled indivdualy increasing the immersion of the user by adding varity for the player. 
+Unlike the reaper, this mob doesn't need to fly and so instead goes directly to the player when told to. What's important about the method used for controlling the reaper is that the skeletons emit themselves as a signal only the individual skeleton is controlled not the whole group increasing the immersion of the user by adding varity for the player. 
 
-Once these mobs have been killed if the dimension is still in 1 than the reaper will go into an attack phase in which it will find the players location and then telport to him to attack. This attack pattern controled through pathfinding and collisions to return an attack state. This attack state will countiue until the player has died the reaper is killed or the dimension is changed. 
+Once these mobs have been killed if the dimension is still in 1 then the reaper will go into an attack phase in which it will find the player's location and then teleport to him to attack. This attack pattern is controlled through pathfinding and collisions to return an attack state. 
 
-If the dimension is changed the reaper will spawn a diffrent mob while attacking. This is because the mob spawned is not controlled by the reaper which has the following state machine. 
+![image](https://github.com/user-attachments/assets/82a3a2f7-3ccf-4910-b8b1-3c0a5bb6e7b1)
 
-##### Big Guy/Mage
-A majority of this mob runs off timers and randomizes creating a unqiue and diffrent mob. This mob was designed to be very diffrent to how the other mobs run for instance the mob cannot be killed by the player instead they can only die after the lifetime or the 'timer' has run out. The states of the timer are controlled as follows
+This attack state will countiue until the player has died the reaper is killed or the dimension is changed. 
 
+If the dimension is changed the reaper will spawn a different mob while attacking. This is because the mob spawned is not controlled by the reaper and so this is what 'allows' the reaper to attack while the other mob is present. 
+
+#### Big Guy/Mage
+A majority of this mob runs off-timers and randomizes creating a unique and different mob. This mob was designed to be very different to how the other mobs. For instance, the mob cannot be killed by the player instead they can only die after the lifetime or the 'timer' has run out. The states of the timer are controlled as follows
 
 ```
 func process_physics(_delta: float) -> State:
@@ -252,13 +257,16 @@ func _on_attack_finished_timeout():
 	attack =true
 ```
 
-On the mob a few timers are set the main concept though is that the mob will die once a timer runs out and this timer works through each state machine so no matter what function it is operating on it will die after a span of time. However the way this mob deals damage to the player is somthing that is hard to avoid accounting for what may have been an easy experience. Instead of incoprating the timer function throughout the statmachine it couold have been used at the top of the hirecy. However because of the abudence of timer nodes used in this mob running though using a state machine in this way signifcantly reduces what has to be done deisgned for this mob. 
+On the mob, a few timers are set the main concept being that the mob will die once a timer runs out and this timer works through each state machine because of the design above. An await function is not being used and instead a timer is due to the error ‘async function without "await" in which suggestions suggest it to be a version issue. 
 
-The attack function using raycasts like the skeleton mob however running by itself and shooting at whaever is casted to it. This raycast can however hit the reaper mob and deal damage to it adding more depth and stratgey for the player if they so choose. 
+![image](https://github.com/user-attachments/assets/53dc38a4-4c62-49b7-b790-185fdc27c87a)
+Instead of incorporating the timer function throughout the state machine, it could have been used at the top of the hierarchy. However, the abundance of timer nodes used in this mob running through using a state machine makes us of functions designed earlier while slightly decreasing code lines. 
+
+The mob shoots the player quickly due to its death being based on a timer. This is done by changing states through a ray cast. However, the group assigned to this ray cast means that it can hit the reaper mob as well adding more strategy and depth for the player.
 
 
 
-The movment of this mob was also designed to be less predictble running on a randoom function to decide which direction it can move in 
+The movement of this mob was designed to be less predictable by running on a random function to decide which direction it could move in 
 ```
 func change_direction():
 	direction = randf_range(-1, 1)
@@ -269,7 +277,7 @@ func _on_timer_2_timeout():
 		change_direction()
 ```
 
-On this timer when ended the direction the mob is moving in would change or stay the same depending on the random function result. 
+On this timer when ended the direction the mob is moving in would change or stay the same depending on the random function result. However, upon reflection on this code, randomising speed as well as the y value could have given another layer of 'randomness' to the user.   
 
 ### Testing and feedback
 
