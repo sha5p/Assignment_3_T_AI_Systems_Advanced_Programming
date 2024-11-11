@@ -344,4 +344,9 @@ oOsongOo (2024). background music | Royalty-free Music. [online] Pixabay.com. Av
 
 ‌Pixabay (2023). lift music by kk | Royalty-free Music. [online] Pixabay.com. Available at: https://pixabay.com/sound-effects/lift-music-by-kk-30497/ [Accessed 11 Nov. 2024].
 
+Pixabay.com. (2024). Pixabay. [online] Available at: https://pixabay.com/sound-effects/search/win/ [Accessed 11 Nov. 2024].
+
+‌Vinodadora (2022). male-death-sound | Royalty-free Music. [online] Pixabay.com. Available at: https://pixabay.com/sound-effects/male-death-sound-128357/ [Accessed 11 Nov. 2024].
+
+‌
 ‌
