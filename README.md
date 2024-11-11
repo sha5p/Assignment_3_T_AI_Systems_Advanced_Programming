@@ -79,7 +79,7 @@ func process_physics(delta: float) -> void:
 	if new_state:
 		change_state(new_state)
 ```
-By using this method and calling the current state enter and exit. These functions as shown in the above state class do not return the State being called once every time allowing for a similar function to the ready function happening when the state is exited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
+By using this method and calling the current state enter and exit. These functions as shown in the above [state class](https://github.com/sha5p/Assignment_3_T_AI_Systems_Advanced_Programming?tab=readme-ov-file#state-class) do not return the State being called once every time allowing for a similar function to the ready function happening when the state is exited and entered. Though unnecessary these applications could be expanded upon in the future to form decision trees in which the exit and enter require dependency or information before going further into the tree.
 
 ### Player State Machine and Script 
 
