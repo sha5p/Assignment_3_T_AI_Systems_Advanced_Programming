@@ -113,6 +113,7 @@ if Input.is_action_just_pressed("Up") and parent.is_on_floor() and Global.curren
 		parent.velocity.y = JUMP_VELOCITY
 ```
 And what the player looks like visually to the user. 
+
 ![image](https://github.com/user-attachments/assets/59107f11-4732-439a-9ec9-afc20d989d28)
 ![image](https://github.com/user-attachments/assets/901d504f-1175-4b84-b213-9b502f43ff15)
 
@@ -281,42 +282,40 @@ On this timer when ended the direction the mob is moving in would change or stay
 
 ### Testing and feedback
 
-The first inital struggle was finding a way to control the skeletons mobs individually. This was because a varity of solutions such as making it part of the reaper mob or making both of them their own scenes were iniffcent. Other methods such as relying information through global varibles for signling information became dependent on specific parts of code. And so a varity of tests were made in the best way to make a refrence to the mob. the first method used was looping through the skeletons as a group and finding a refrence then comanding each indivdually. However this did not work as it did not know which skeleton was doing which action only the signals emmiting. And so to solve this the signals emmited by the skeleton emmited themselves along so that the reaper had a refrence. Allowing them to be controlled individully instead of as a group.
+The main struggle was finding a way to control the skeleton's mobs individually. This was because a varity of solutions such as making it part of the reaper mob or making both of them their scenes lacked reliability. Other methods such as relying on information through global variables or signalling information became dependent on specific parts of the code. And so a varity of tests were made to find the least dependent way to refer to the mob/skeleton. 
 
-Feedback from users suggested a few diffrent incoprations to improve upon the came. The first suggested to improve upon the player and its 'sluggish' movment along with how the combat felt.
+By looping through the skeletons as a group an individual reference could made for each skeleton. However, this did not work as the reaper did not know which skeleton was doing which action only the actions occurring were in one of those in the group. To solve this the signals emitted by the skeleton emitted themselves so that the reaper had a reference. Allowing them to be controlled individually instead of as a group.
 
 ![image](https://github.com/user-attachments/assets/37d5c98c-a3bb-4434-8705-2728ff12950a)
 
-taking in on request from the user the combat system was improve upon adding a cancel to the skeletons attack if hit.
+Taking this request from the user the combat system was improved by adding a cancel to the skeleton attack if hit.
+
 
 ![image](https://github.com/user-attachments/assets/1b388c04-cd75-49d3-b3ed-21c354f7ab70)
 
-This was done by running the animation through a function that doesnt go through the -> States allowing it to bypass the current animation being played which is why damage taken is not a state in any other mob a built upon this system. 
+This was done by running the animation through a function that doesn't go through the -> States allowing it to bypass the current animation being played which is why damage taken is not a state in any other mob built upon this system. If given more time additional additions such as hit stop would have been added but time constraints only allowed for this issue to be partially addressed. 
 
-
-The second test user asked for the addition of indications the the when the reaper would attack next and so a radius was added to the reaper to show how far it could see 
+The second test user asked for the addition of indications when the reaper would attack next and so a radius was added to the reaper to show how far it could see. Again without time constraints, this could potentially appear using the on-exit function giving the player only a brief warning before an action takes place. 
 
 ![image](https://github.com/user-attachments/assets/9ef2280d-de7e-4f8e-b41c-5ccb5b5fedd6)
 
-Which not only improved upon the combat like the first user asked for but solved the problem of a lack of being able to predict where the mob could go. 
+This addition also improved upon the combat like the first user asked for as well as solving the initial problem. 
 
-Lastly the final user asked for indications that the reaper was controling the skeleton mob 
+Lastly, the final user asked for indications that the reaper was controlling the skeleton mob and so the use of the same animation of 'rune-like' symbol was used when controlling the skeleton mob.
 ![image](https://github.com/user-attachments/assets/d9b95ba8-b901-4808-b45c-41216aab25db)
-and so the use of the same animation of 'rune like' symbol was used when controling the skeleton mob 
 
 ![image](https://github.com/user-attachments/assets/6338cdc5-6a8f-4fb0-8255-a98a324eb394) 
-![image](https://github.com/user-attachments/assets/aea86275-543c-4ae5-9bbf-bd90610d58ba)
-![image](https://github.com/user-attachments/assets/30b03fe2-2857-4d49-8540-7a7e79b76f1a)
-However generally it seemed that the user enjoyed the game as shown in the grapth here and through the users responses
+![image](https://github.com/user-attachments/assets/d244083e-380c-433c-ba0c-a5f3d3d9add1)
+
+However, generally, it seemed that the user enjoyed the game as shown in the graph here and through the user's responses.
 
 ![image](https://github.com/user-attachments/assets/05c73990-2a35-44ca-8af6-e307b09fdcb0)
 
-### Evulation on Game
+### Evaluation  on Game
 
-Unlike other games before this one had a heavy focus on enemey AI and state machine design. This game using a varity of state machines to perform spercific functions including that of controling other mobs, complex enemy states, controling the player and script based state machines. If this assesment were to have been extended polishing on the state machines and taking full advantage of its function to devlop more complex scripts would have been used on more of the mobs rather than just the reaper. In addition adding polish such as a hit stop to the player so the user feels more impact as well as explore more into changing the enviorment and making the dimension feature even more imbended into the game such as parcore routes that can only be taken in one dimension. 
-
-
+Unlike other games before this one had a heavy focus on enemy AI and state machine design. This game uses a varity of state machines to perform specific functions including that of controlling other mobs, and complex enemy states, controlling the player and script-based state machines. If this assessment were to have been extended polishing on the state machines and taking full advantage of its function to develop more complex scripts would have been done on more of the mobs rather than just the reaper. In addition, adding polish such as a hit stop to the player to address feedback more thoroughly and making the dimension feature even more embedded into the game such as parkour routes that can only be taken in one dimension. 
 
 
 
-### Biblogaphy 
+
+## Bibliography 
